@@ -21,8 +21,11 @@ const GlobalStyle = createGlobalStyle`
 }
 body{
   background-color: ${constants.backgroundColor};
-  padding: 42px 62px;
+  padding: 42px 33px;
   color: beige;
+  @media only screen and (min-width: 720px){
+    padding: 42px 62px;
+  }
 }
 `
 

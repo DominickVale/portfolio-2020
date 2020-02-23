@@ -4,6 +4,9 @@ export default {
   navLinkColor: '#D7D7D7',
   navLinkSize: '14px',
   navLinkWeight: '700',
+  headingColor: '#F3E7E7',
   descriptionColor: '#A7A7A7',
-  highlightColor: '#D52A24'
+  highlightColor: '#D52A24',
+  projectTitleSize: '8vw',
+  projectDescriptionColor: '#C4C4C4'
 }

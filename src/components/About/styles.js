@@ -34,14 +34,15 @@ font-size: 7vw;
 export const IntroSubCaption = styled.h3`
 font-family: "Space Mono";
 font-weight: 400;
-font-size: 3.6vw;
+font-size: 0.76rem;
 color: ${constants.descriptionColor};
 opacity: 0.6;
-margin-top: -1rem;
+margin-top: -0.9rem;
 `
 
 export const Description = styled.section`
 font-family: "Space Mono";
 color: ${constants.descriptionColor};
-margin-top: 10vh;
+margin-top: 12vh;
+font-size: 0.9rem;
 `

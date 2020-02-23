@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
 body{
   background-color: ${constants.backgroundColor};
   padding: 42px 62px;
+  color: beige;
 }
 `
 

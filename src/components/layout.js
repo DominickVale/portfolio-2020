@@ -1,6 +1,7 @@
 import React from "react"
 
 import Header from "./Header"
+import Footer from "./Footer"
 import styled,{createGlobalStyle} from 'styled-components'
 import constants from "../constants"
 import 'normalize.css';
@@ -17,6 +18,14 @@ body{
   color: beige;
   @media only screen and (min-width: 720px){
     padding: 0 62px;
+  }
+}
+
+a{
+  color: ${constants.navLinkColor};
+  text-decoration: none;
+  &:visited{
+    color: inherit;
   }
 }
 `
@@ -40,6 +49,7 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <Header/>
       {children}
+      <Footer />
     </Container>
   )
 }

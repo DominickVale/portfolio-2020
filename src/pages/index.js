@@ -49,6 +49,7 @@ const IndexPage = () => {
     <About/>
     <SectionHeadline>&lt;PROJECTS/&gt;</SectionHeadline>
     {PROJECTS.map(project => (<ProjectItem {...project} image={data[project.image].childImageSharp.fluid} key={project.name}/>))}
+    <SectionHeadline>&lt;CONTACTS/&gt;</SectionHeadline>
   </Layout>
 )}
 

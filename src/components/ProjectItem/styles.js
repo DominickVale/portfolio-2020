@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import Img from 'gatsby-image'
+
 import constants from '../../constants';
 
 import {Highlight} from '../shared/styles'
@@ -16,12 +18,18 @@ text-align: center;
 font-family: "HK Grotesk Bold";
 `
 
-export const ProjectImage = styled.div`
+export const ProjectImage = styled(Img)`
+max-height: 60vh !important;
+margin-bottom: 4vh;
+img{
+  object-fit: contain !important;
+}
 `
 
 export const ProjectInformation = styled.div`
 display: flex;
 flex-direction: column;
+
 `
 export const ProjectDetail = styled.span`
 display: flex;

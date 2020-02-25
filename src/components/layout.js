@@ -25,7 +25,7 @@ a{
   color: ${constants.navLinkColor};
   text-decoration: none;
   &:visited{
-    color: inherit;
+    color: ${constants.navLinkColor};
   }
 }
 `

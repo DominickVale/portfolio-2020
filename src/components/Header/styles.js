@@ -25,9 +25,6 @@ color: ${constants.navLinkColor};
 font-size: ${constants.navLinkSize};
 font-weight: ${constants.navLinkWeight};
 margin-right: 1rem;
-a&{
-  text-decoration: none;
-}
 @media only screen and (min-width: 720px){
   display: inline-block;
 }

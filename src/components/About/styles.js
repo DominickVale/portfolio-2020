@@ -89,7 +89,7 @@ font-size: 0.9rem;
   margin-right: 1rem;
 }
 @media only screen and (min-width: 1440px){
-  margin-left: 50vw;
+  margin-left: 60vw;
   margin-top: -3vh;
 }
 @media only screen and (min-width: 1650px){
@@ -106,33 +106,24 @@ margin-top: 5vh;
 text-align: center;
 transform: scale(0.4);
 object-fit: contain;
+max-width: 10rem;
 @media only screen and (min-width: 900px){
   position: relative;
-  transform: scale(0.8);
+  transform: scale(0.6);
   text-align: left;
   svg{
     position: relative;
-    left: -8.5vw;
+    left: 2vw;
     top: 2vw;
   }
 }
 @media only screen and (min-width: 1300px){
-  transform: scale(1);
-  svg{
-    left: 1.6vw;
-    top: 0;
-  }
+  transform: scale(0.8);
 }
 @media only screen and (min-width: 1650px){
-  svg{
-    left: 2vw;
-    top: 0;
-  }
+  transform: scale(0.9);
 }
 @media only screen and (min-width: 1750px){
-  svg{
-    left: 2vw;
-    top: 0;
-  }
+  transform: scale(1);
 }
 `

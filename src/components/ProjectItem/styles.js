@@ -65,7 +65,7 @@ font-family: "HK Grotesk Bold";
 @media only screen and (min-width: 840px){
   font-size: ${constants.projectTitleSizeDesktop};
   margin: 0;
-  padding: 1.6rem;
+  padding: 2rem;
   text-align: left;
   line-height: 80%;
   &::before{
@@ -73,9 +73,10 @@ font-family: "HK Grotesk Bold";
   }
 }
 ${_isChrome && css`
-  padding: 1.6rem 1.6rem 0.8rem 1.6rem !important;
+  padding: 2rem 2rem 1.3rem 2rem !important;
 `//had to select only chrome to fix vertical alignment because ... chrome. 
 }
+${props => props.left && css`text-align: right !important;`}
 ${MobileBorder}
 `
 
@@ -89,21 +90,24 @@ img{
 ${MobileBorder}
 border-image-width: 0px 20px 20px 20px;
 @media only screen and (min-width: 1440px){
-  max-height: 80vh !important;
+  max-height: 68vh !important;
 }
 `
 
 export const ProjectInformation = styled.div`
-margin-top: 2rem;
+margin-top: 8vh;
 grid-area: details;
 max-width: 90%;
 margin-left: 1rem;
 @media only screen and (min-width: 800px){
-  margin-left: 10vw;
+  margin-left: ${props => props.left ? '2vw' : '10vw'};
 }
 @media only screen and (min-width: 1440px){
-  margin-left: 20vw;
+  margin-left: ${props => props.left ? '2vw' : '20vw'};
 }
+${props => props.left && css`
+  
+`}
 `
 export const ProjectDetail = styled.span`
 display: flex;
@@ -113,7 +117,7 @@ margin-top: 1rem;
 `
 
 export const ProjectDetailCaption = styled(Highlight)`
-font-size: 0.8rem;
+  font-size: calc(0.7rem + 0.2vw);
 font-family: "Space Mono";
 margin-right: 2rem;
 float: ${props => props.float ? props.float : 'none'};
@@ -124,7 +128,7 @@ max-width: 2rem;
 
 export const ProjectDetailContent = styled.span`
 font-family: ${props => props.bold ? "HK Grotesk Bold" : "HK Grotesk Regular"};
-font-size: 1rem;
+font-size: ${props => props.bold ? 'calc(0.7rem + 0.3vw)' : 'calc(0.8rem + 0.4vw)'};
 color: ${constants.projectDescriptionColor};
 `
 
@@ -133,5 +137,11 @@ margin-top: 1rem;
 display: block;
 font-family: "HK Grotesk Regular";
 color: ${constants.projectDescriptionColor};
-
+@media only screen and (min-width: 800px){
+  & span:nth-child(2){
+    display: block;
+    max-width: 100% !important;
+    margin-left: 4rem;
+  }
+}
 `

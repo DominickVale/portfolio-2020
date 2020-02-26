@@ -13,7 +13,7 @@ const ProjectItem = (props) => {
     <ProjectContainer left={props.left}>
       <ProjectTitle left={props.left}>{props.name}</ProjectTitle>
       <ProjectImage fluid={props.image}/>
-      <ProjectInformation>
+      <ProjectInformation left={props.left}>
         <ProjectDetail>
           <ProjectDetailCaption>date:</ProjectDetailCaption>
           <ProjectDetailContent bold>{props.date}</ProjectDetailContent>

@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import constants from '../../constants'
 
+import {MobileBorder} from '../shared/styles'
+
 export const FooterContainer = styled.div`
 display: flex;
 flex-direction: column;
@@ -11,6 +13,7 @@ align-content: center;
 export const IconsContainer = styled.section`
 display: flex;
 justify-content: space-between;
+${MobileBorder};
 `
 
 export const ContactInfo = styled.div`

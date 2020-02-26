@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
-import { ProjectContainer, ProjectTitle, ProjectImage, ProjectDetail, ProjectDetailCaption, ProjectDetailContent, ProjectDescription } from './styles'
-
+import { ProjectContainer, ProjectTitle, ProjectImage, ProjectInformation, ProjectDetail, ProjectDetailCaption, ProjectDetailContent, ProjectDescription } from './styles'
+import ActionButton from '../shared/ActionButton'
+import {Break} from '../shared/styles'
 
 const ProjectItem = (props) => {
 
@@ -9,9 +10,10 @@ const ProjectItem = (props) => {
   }, [])
 
   return (
-    <ProjectContainer>
-      <ProjectTitle>{props.name}</ProjectTitle>
+    <ProjectContainer left={props.left}>
+      <ProjectTitle left={props.left}>{props.name}</ProjectTitle>
       <ProjectImage fluid={props.image}/>
+      <ProjectInformation>
         <ProjectDetail>
           <ProjectDetailCaption>date:</ProjectDetailCaption>
           <ProjectDetailContent bold>{props.date}</ProjectDetailContent>
@@ -24,6 +26,9 @@ const ProjectItem = (props) => {
           <ProjectDetailCaption float="left">notes:</ProjectDetailCaption>
           <ProjectDetailContent>{props.description}</ProjectDetailContent>
         </ProjectDescription>
+      </ProjectInformation>
+      <ActionButton left={props.left}>VISIT WEBSITE</ActionButton>
+      <Break />
     </ProjectContainer>
   )
 }

@@ -92,6 +92,12 @@ font-size: 0.9rem;
   margin-left: 50vw;
   margin-top: -3vh;
 }
+@media only screen and (min-width: 1650px){
+  margin-top: 0;
+}
+@media only screen and (min-width: 1750px){
+  margin-top: 1vw;
+}
 ${MobileBorder}
 `
 
@@ -100,4 +106,33 @@ margin-top: 5vh;
 text-align: center;
 transform: scale(0.4);
 object-fit: contain;
+@media only screen and (min-width: 900px){
+  position: relative;
+  transform: scale(0.8);
+  text-align: left;
+  svg{
+    position: relative;
+    left: -8.5vw;
+    top: 2vw;
+  }
+}
+@media only screen and (min-width: 1300px){
+  transform: scale(1);
+  svg{
+    left: 1.6vw;
+    top: 0;
+  }
+}
+@media only screen and (min-width: 1650px){
+  svg{
+    left: 2vw;
+    top: 0;
+  }
+}
+@media only screen and (min-width: 1750px){
+  svg{
+    left: 2vw;
+    top: 0;
+  }
+}
 `

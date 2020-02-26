@@ -5,6 +5,8 @@ import constants from '../../constants';
 import objectHeadline1 from '../../../public/images/object_headline_1.svg'
 import {MobileBorder, Highlight} from '../shared/styles'
 
+const _isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+
 export const ProjectContainer = styled.article`
 display: flex;
 flex-direction: column;
@@ -12,7 +14,7 @@ margin-bottom: 20vh;
 @media only screen and (min-width: 840px){
   display: grid;
   grid-template-columns: 3fr 4fr;
-  grid-template-rows: 100% 100% 1fr;
+  grid-template-rows: auto auto 1fr;
   grid-column-gap: 4%;
   grid-template-areas:
   "image title"
@@ -31,6 +33,7 @@ margin-bottom: 20vh;
 `
 
 export const ProjectTitle = styled.h1`
+text-transform: uppercase;
 position: relative;
 grid-area: title;
 color: ${constants.headingColor};
@@ -42,6 +45,7 @@ font-family: "HK Grotesk Bold";
   content: "";
   display: none;
   position: absolute;
+  border-top: solid;
   border-image-slice: 16 16 16 16;
   border-image-width: 20px 20px 20px 20px;
   border-image-outset: 0px 0px 0px 0px;
@@ -68,6 +72,10 @@ font-family: "HK Grotesk Bold";
     display: inline-block;
   }
 }
+${_isChrome && css`
+  padding: 1.6rem 1.6rem 0.8rem 1.6rem !important;
+`//had to select only chrome to fix vertical alignment because ... chrome. 
+}
 ${MobileBorder}
 `
 
@@ -80,12 +88,22 @@ img{
 }
 ${MobileBorder}
 border-image-width: 0px 20px 20px 20px;
+@media only screen and (min-width: 1440px){
+  max-height: 80vh !important;
+}
 `
 
 export const ProjectInformation = styled.div`
+margin-top: 2rem;
 grid-area: details;
 max-width: 90%;
 margin-left: 1rem;
+@media only screen and (min-width: 800px){
+  margin-left: 10vw;
+}
+@media only screen and (min-width: 1440px){
+  margin-left: 20vw;
+}
 `
 export const ProjectDetail = styled.span`
 display: flex;

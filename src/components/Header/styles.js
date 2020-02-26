@@ -6,7 +6,7 @@ export const Nav = styled.nav`
 display: flex;
 justify-content: center;
 @media only screen and (min-width: 720px){
-  justify-content: end;
+  justify-content: flex-end;
 }
 `
 

@@ -100,10 +100,10 @@ grid-area: details;
 max-width: 90%;
 margin-left: 1rem;
 @media only screen and (min-width: 800px){
-  margin-left: ${props => props.left ? '2vw' : '10vw'};
+  ${props => props.left ? 'margin-right: 10vw' : 'margin-left: 10vw'}
 }
 @media only screen and (min-width: 1440px){
-  margin-left: ${props => props.left ? '2vw' : '20vw'};
+  ${props => props.left ? 'margin-right: 20vw' : 'margin-left: 20vw'}
 }
 ${props => props.left && css`
   

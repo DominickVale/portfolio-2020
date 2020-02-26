@@ -8,15 +8,30 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-content: center;
+@media only screen and (min-width: 800px){
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 3fr 1fr 1fr;
+  grid-template-areas:
+  "arrow info quote"
+  ". socials ."
+  ". credit .";
+}
 `
 
 export const IconsContainer = styled.section`
+grid-area: socials;
 display: flex;
 justify-content: space-between;
+justify-self: center;
+width: 100%;
+max-width: 60%;
 ${MobileBorder};
 `
 
 export const ContactInfo = styled.div`
+grid-area: info;
 display: flex;
 justify-content: space-between;
 max-width: 30rem;
@@ -49,15 +64,51 @@ p{
 `
 
 export const DevelopedBy = styled.div`
+grid-area: credit;
 font-family: "Space Mono";
 font-size: 0.8rem;
 text-align: center;
 width: 100%;
 color:  ${constants.descriptionColor};
-opacity: 0.8;
+opacity: 0.4;
 margin: 0;
 margin-top: 5vh;
 p{
   margin: 0;
+}
+`
+
+export const QuoteSection = styled.section`
+grid-area: quote;
+display: none;
+margin-bottom: 5vh;
+color: ${constants.descriptionColor};
+font-family: "Space Mono";
+font-size: calc(0.6rem + 0.3vw);
+@media only screen and (min-width: 800px){
+  display: block;
+}`
+
+export const StyledArrow = styled.div`
+display: none;
+object-fit: contain;
+transform: rotateX(180deg);
+& p{
+  transform: rotateX(-180deg);
+  margin-left: 0.6vw;
+  color: rgba(243, 231,231, 0.4);
+  font-family: "Space Mono";
+  font-weight: bold;
+  opacity: 0.4;
+  font-size: calc(0.6rem + 0.2vw);
+}
+@media only screen and (min-width: 800px){
+  display: block;
+}
+@media only screen and (min-width: 1300px){
+}
+@media only screen and (min-width: 1650px){
+}
+@media only screen and (min-width: 1750px){
 }
 `

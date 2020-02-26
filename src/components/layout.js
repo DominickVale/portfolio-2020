@@ -14,10 +14,14 @@ import bg from '../../public/images/bg.svg'
 const GlobalStyle = createGlobalStyle`
 body{
   background-color: ${constants.backgroundColor};
+  overflow-x: hidden;
   padding: 0 33px;
   color: beige;
   @media only screen and (min-width: 720px){
     padding: 0 62px;
+  }
+  @media only screen and (min-width: 1440px){
+    padding: 0 5vw;
   }
 }
 
@@ -32,10 +36,12 @@ a{
 
 
 const Container = styled.div`
-  background-image: url(${bg});
-  background-repeat: repeat-y;
-  background-size: contain;
   padding: 42px 0;
+  @media only screen and (min-width: 720px){
+    background-image: url(${bg});
+    background-repeat: repeat-y;
+    background-size: contain;
+}
 `
 
 

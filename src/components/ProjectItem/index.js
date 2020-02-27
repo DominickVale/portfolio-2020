@@ -6,7 +6,6 @@ import {Break} from '../shared/styles'
 const ProjectItem = (props) => {
 
   useEffect(() => {
-    console.log(props.image)
   }, [])
 
   return (

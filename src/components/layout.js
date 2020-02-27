@@ -6,9 +6,6 @@ import styled,{createGlobalStyle} from 'styled-components'
 import constants from "../constants"
 import 'normalize.css';
 import './styles.css';
-import bg from '../../public/images/bg.svg'
-import bg2 from '../../public/images/bg2.svg'
-
 
 
 

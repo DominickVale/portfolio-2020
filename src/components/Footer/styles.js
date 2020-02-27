@@ -74,7 +74,7 @@ width: 100%;
 color:  ${constants.descriptionColor};
 opacity: 0.4;
 margin: 0;
-margin-top: 5vh;
+margin-top: 7vh;
 p{
   margin: 0;
 }
@@ -97,7 +97,7 @@ object-fit: contain;
 transform: rotateX(180deg);
 & p{
   transform: rotateX(-180deg);
-  margin-left: 0.6vw;
+  margin-left: 0.8rem;
   color: rgba(243, 231,231, 0.4);
   font-family: "Space Mono";
   font-weight: bold;
@@ -106,8 +106,14 @@ transform: rotateX(180deg);
 }
 @media only screen and (min-width: 800px){
   display: block;
+  & p{
+    margin-left: 0.7rem;
+  }
 }
-@media only screen and (min-width: 1300px){
+@media only screen and (min-width: 1440px){
+  & p{
+    margin-left: 0.4rem;
+  }
 }
 @media only screen and (min-width: 1650px){
 }

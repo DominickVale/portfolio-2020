@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components'
 import constants from '../../constants'
 
-import {Button, MobileBorder, MenuBorder} from '../shared/styles'
+import {Button, MenuBorder} from '../shared/styles'
 
 export const MenuWrapper = styled.nav`
 position: fixed;
@@ -24,10 +24,9 @@ background-color: ${constants.backgroundColor};
 border-left: 1px solid ${constants.sectionHeadlineColor};
 border-right: 1px solid ${constants.sectionHeadlineColor};
 margin: 0 33px 20vh 33px;
-padding-bottom: 5vh;
 width: 100%;
 height: 100%;
-max-height: 80vh;
+max-height: 100vh;
 left: 0;
 top: 0;
 z-index: 10;

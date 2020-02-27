@@ -46,7 +46,8 @@ cursor: pointer;
 `
 
 export const SectionHeadline = styled.h2`
-margin-top: 20vh;
+margin-top: 25vh;
+margin-bottom: 10vh;
 font-family: "HK Grotesk Bold";
 font-size: 12vw;
 color: transparent;

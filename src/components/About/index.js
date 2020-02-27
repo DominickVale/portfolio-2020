@@ -1,8 +1,30 @@
-import React from 'react'
+import React, {useState} from 'react'
+import {useMediaQuery} from 'react-responsive'
 import { Container, BackgroundH1, Intro, IntroCaption, IntroSubCaption,  Description, StyledArrow} from './styles'
 import { Highlight } from '../shared/styles'
 
-const index = () => {
+const About = () => {
+
+  const [descriptionExpanded, setDescriptionExp] = useState(false)
+
+  const readMoreHandler = () => {
+    setDescriptionExp(state => !state)
+  }
+
+  const isDesktop = useMediaQuery({query: '(min-width: 800px)'})
+  
+  
+  const Read = (props)=>{
+    
+    if(!isDesktop){
+      return(<Highlight secondary onClick={readMoreHandler}>
+        {props.more ? descriptionExpanded ? null : 'Read more!' : 'Read less...'}
+        </Highlight>)
+    } else {
+      return null;
+    }
+  }
+
   return (
     <Container>
       <BackgroundH1>&lt;HI/&gt;</BackgroundH1>
@@ -13,8 +35,15 @@ const index = () => {
           <IntroSubCaption>Let's go. In and out. Two&nbsp;minutes&nbsp;adventure.</IntroSubCaption>
         </Intro>
       <Description><Highlight>Who am i?</Highlight><br/><br/>
-        I’m Domenico Vale, a 21 years old guy from Italy whose interests range from web development/design to reverse engineering, rock, nature & sportbikes.<br/><br/>
-        I see life as a progressive and competitive MMoRPG Game, in which you are supposed to improve on your skills and become the best possible version of yourself before the end game.<br/><br/>
+        I’m Domenico Vale, a 21 years old guy from Italy whose interests range from web development/design to reverse engineering, rock, nature & sportbikes.&nbsp;
+        <Read more /><br/><br/>
+
+        {(descriptionExpanded || isDesktop) && (
+          <>
+            I see life as a progressive and competitive MMoRPG Game, in which you are supposed to improve on your skills and become the best possible version of yourself
+            before the end game.&nbsp;<Read less /><br/><br/>
+        </>)}
+
         I’m currently looking for a job as JavaScript 
         Front&#8209;end&nbsp;Developer.</Description>
       <StyledArrow>
@@ -26,4 +55,4 @@ const index = () => {
   )
 }
 
-export default index
+export default About

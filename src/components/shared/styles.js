@@ -27,6 +27,12 @@ cursor: pointer;
 
 export const Highlight = styled.span`
 color: ${constants.highlightColor};
+${props => props.secondary && css`
+font-size: 0.8em;
+font-weight: bold;
+color: ${constants.navLinkColor};
+cursor: pointer;
+`}
 `
 
 export const SectionHeadline = styled.h2`

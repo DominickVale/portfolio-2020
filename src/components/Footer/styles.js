@@ -26,7 +26,9 @@ display: flex;
 justify-content: space-between;
 justify-self: center;
 width: 100%;
-max-width: 60%;
+@media only screen and (min-width: 800px){
+  max-width: 60%;
+}
 ${MobileBorder};
 `
 

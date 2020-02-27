@@ -104,13 +104,15 @@ ${MobileBorder}
 export const StyledArrow = styled.div`
 margin-top: 5vh;
 text-align: center;
-transform: scale(0.4);
+transform: scale(0.6);
 object-fit: contain;
 max-width: 10rem;
+align-self: center;
 @media only screen and (min-width: 900px){
   position: relative;
-  transform: scale(0.6);
+  transform: scale(0.9);
   text-align: left;
+  align-self: flex-start;
   svg{
     position: relative;
     left: 2vw;

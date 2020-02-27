@@ -71,12 +71,12 @@ font-family: "HK Grotesk Bold";
   &::before{
     display: inline-block;
   }
+  ${props => props.left && css`text-align: right !important;`}
 }
 ${_isChrome && css`
   padding: 2rem 2rem 1.3rem 2rem !important;
 `//had to select only chrome to fix vertical alignment because ... chrome. 
 }
-${props => props.left && css`text-align: right !important;`}
 ${MobileBorder}
 `
 

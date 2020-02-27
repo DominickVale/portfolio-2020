@@ -7,6 +7,7 @@ import constants from "../constants"
 import 'normalize.css';
 import './styles.css';
 import bg from '../../public/images/bg.svg'
+import bg2 from '../../public/images/bg2.svg'
 
 
 
@@ -36,12 +37,10 @@ a{
 
 
 const Container = styled.div`
-  padding: 42px 0;
-  @media only screen and (min-width: 720px){
-    background-image: url(${bg});
-    background-repeat: repeat-y;
-    background-size: contain;
-}
+  padding-bottom: 2rem;
+  @media only screen and (min-width: 800px){
+    padding: 42px 0;
+  }
 `
 
 

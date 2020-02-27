@@ -38,7 +38,7 @@ a{
 
 const Container = styled.div`
   padding-bottom: 2rem;
-  @media only screen and (min-width: 800px){
+  @media only screen and (min-width: 720px){
     padding: 42px 0;
   }
 `

@@ -12,7 +12,7 @@ justify-content: center;
 
 export const HamButton = styled(Button)`
 padding: 0.8rem;
-margin: 0.2rem;
+margin: 0.4rem;
 @media only screen and (min-width: 720px){
   display: none;
 }

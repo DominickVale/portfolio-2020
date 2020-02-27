@@ -3,6 +3,7 @@ import constants from '../../constants'
 import decorationObject1 from '../../../public/images/decoration_object_1.svg'
 
 import mobileBorder from '../../../public/images/mobile_border.svg'
+import menuBorder from '../../../public/images/menu_border.svg'
 
 
 export const MobileBorder = css`
@@ -12,10 +13,19 @@ border-image-width: 20px 20px 20px 20px;
 border-image-outset: 30px 30px 30px 30px;
 border-image-repeat: stretch space;
 border-image-source: url(${mobileBorder});
+  border-image-source: url(${menuBorder});
 @media only screen and (min-width: 720px){
   border-image: none;
   border-style: unset;
 }
+`
+
+export const MenuBorder = css`
+${MobileBorder};
+border-image-slice: 25 25 25 25;
+border-image-width: 40px 40px 40px 40px;
+border-image-outset: 28px 28px 28px 28px;
+border-image-source: url(${menuBorder});
 `
 
 export const Button = styled.button`

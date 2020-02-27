@@ -1,5 +1,6 @@
 export default {
   backgroundColor: '#0E0D0D',
+  backgroundColorOpacity: 'rgba(14, 13, 13, 0.8)',
   backgroundObjectsColor: 'rgb(243, 231,231)',
   sectionHeadlineColor: 'rgba(243, 231,231, 0.2)',
   navLinkColor: '#D7D7D7',

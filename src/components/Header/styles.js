@@ -2,6 +2,10 @@ import styled from 'styled-components'
 import constants from '../../constants'
 import {Button} from '../shared/styles'
 
+export const StyledHeader = styled.header`
+position: relative;
+`;
+
 export const Nav = styled.nav`
 display: flex;
 justify-content: center;
@@ -29,3 +33,27 @@ margin-right: 1rem;
   display: inline-block;
 }
 `
+
+export const ProgressBarContainer = styled.div`
+position: absolute;
+left: 0;
+bottom: -1rem;
+width: 73%;
+`;
+
+export const ProgressBar = styled.div`
+height: 1px;
+position: relative;
+background-color: ${constants.backgroundObjectsColor};
+&::after{
+  content: "";
+  display: inline-block;
+  background-color: inherit;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  position: absolute;
+  right: -7px;
+  top: -3px;
+}
+`;

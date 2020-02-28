@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-import {Nav, HamButton} from './styles'
+import {StyledHeader, Nav, HamButton, ProgressBar, ProgressBarContainer} from './styles'
 import Link from './Link'
 import Menu from '../Menu'
 
@@ -10,7 +10,10 @@ const Header = () => {
 
 
   return (
-    <header>
+    <StyledHeader>
+      <ProgressBarContainer>
+        <ProgressBar/>
+      </ProgressBarContainer>
       {menuOpen && (<Menu onClose={() => setMenuOpen(false)}/>)}
       <Nav>
         <HamButton onClick={() => setMenuOpen(true)}>
@@ -23,7 +26,7 @@ const Header = () => {
         <Link href="#">lab</Link>
         <Link href="#">contacts</Link>
       </Nav>
-    </header>
+    </StyledHeader>
   )
 }
 

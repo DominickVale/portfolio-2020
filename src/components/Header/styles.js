@@ -35,20 +35,24 @@ margin-right: 1rem;
 `
 
 export const ProgressBarContainer = styled.div`
+display: none;
 position: absolute;
 left: 0;
 bottom: -1rem;
-width: 73%;
+width: 100%;
+@media only screen and (min-width: 720px){
+  display: block;
+}
 `;
 
 export const ProgressBar = styled.div`
 height: 1px;
 position: relative;
-background-color: ${constants.backgroundObjectsColor};
+background-color: ${constants.descriptionColor};
 &::after{
   content: "";
   display: inline-block;
-  background-color: inherit;
+  background-color: ${constants.headingColor};
   width: 7px;
   height: 7px;
   border-radius: 50%;

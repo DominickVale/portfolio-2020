@@ -11,6 +11,9 @@ display: flex;
 flex-direction: column;
 font-family: "HK Grotesk Bold";
 margin-top: 10vh;
+@media only screen and (min-width: 800px){
+  margin-top: 14vh;
+}
 `
 
 export const BackgroundH1 = styled.h1`
@@ -59,7 +62,7 @@ line-height: 113%;
 }
 @media only screen and (min-width: 1440px){
   max-width: 50vw;
-  font-size: calc(2rem + 2.6vw);
+  font-size: calc(2rem + 2.4vw);
   margin-bottom: 1rem;
 }
 
@@ -74,7 +77,7 @@ opacity: 0.6;
 margin-top: -0.9rem;
 @media only screen and (min-width: 900px){
   margin-top: 0.4vh;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 `
 
@@ -109,7 +112,8 @@ object-fit: contain;
 max-width: 10rem;
 align-self: center;
 @media only screen and (min-width: 900px){
-  position: relative;
+  position: absolute;
+  top: 50vh;
   transform: scale(0.9);
   text-align: left;
   align-self: flex-start;

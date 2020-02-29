@@ -30,6 +30,21 @@ a{
     color: ${constants.navLinkColor};
   }
 }
+
+::selection{
+  background-color: ${constants.selectionBG};
+  color: ${constants.highlightColor};
+  height: 50%;
+}
+
+::-webkit-scrollbar{
+  background-color: ${constants.backgroundColor};
+  width: 0.5vw !important;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: ${constants.navLinkColor};
+}
 `
 
 

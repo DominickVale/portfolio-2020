@@ -15,11 +15,11 @@ const ProjectItem = (props) => {
       <ProjectInformation left={props.left}>
         <ProjectDetail>
           <ProjectDetailCaption>date:</ProjectDetailCaption>
-          <ProjectDetailContent bold>{props.date}</ProjectDetailContent>
+          <ProjectDetailContent>{props.date}</ProjectDetailContent>
         </ProjectDetail>
         <ProjectDetail>
           <ProjectDetailCaption>tech:</ProjectDetailCaption>
-          <ProjectDetailContent bold>{props.tags}</ProjectDetailContent>
+          <ProjectDetailContent>{props.tags}</ProjectDetailContent>
         </ProjectDetail>
         <ProjectDescription>
           <ProjectDetailCaption float="left">notes:</ProjectDetailCaption>

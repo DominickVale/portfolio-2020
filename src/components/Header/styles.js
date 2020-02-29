@@ -28,7 +28,7 @@ font-family: 'Space Mono';
 color: ${constants.navLinkColor};
 font-size: ${constants.navLinkSize};
 font-weight: ${constants.navLinkWeight};
-margin-right: 1rem;
+margin-right: 1.5rem;
 @media only screen and (min-width: 720px){
   display: inline-block;
 }

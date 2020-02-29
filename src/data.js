@@ -25,12 +25,4 @@ export const DESIGNS = [
     name: "America Sporting Club",
     image: "ambientify" 
   },
-  {
-    name: "Photographer e-commerce",
-    image: "photographer_e_commerce"
-  },
-  {
-    name: "America Sporting Club",
-    image: "ambientify"
-  },
 ]

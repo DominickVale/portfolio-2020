@@ -5,7 +5,7 @@ import constants from '../../constants';
 import objectHeadline1 from '../../../public/images/object_headline_1.svg'
 import {MobileBorder, Highlight} from '../shared/styles'
 
-const _isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+const _isChrome = typeof window !== "undefined" && (!!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime));
 
 export const ProjectContainer = styled.article`
 display: flex;

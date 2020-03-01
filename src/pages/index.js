@@ -31,12 +31,12 @@ const IndexPage = () => {
   `)
 
   return(
-  <Layout>
+  <Layout id="about">
     <About/>
     <SectionHeadline>&lt;PROJECTS/&gt;</SectionHeadline>
-    {PROJECTS.map((project, i) => (<ProjectItem {...project} image={data[project.image].childImageSharp.fluid} key={project.name} left={1 & i}/>))}
+    {PROJECTS.map((project, i) => (<ProjectItem {...project} index={i} image={data[project.image].childImageSharp.fluid} key={project.name} left={1 & i}/>))}
     <SectionHeadline>&lt;DESIGNS/&gt;</SectionHeadline>
-    <DesignsContainer>
+    <DesignsContainer id="designs">
      {DESIGNS.map((design, i) => (<DesignItem {...design} image={data[design.image].childImageSharp.fluid} key={design.name} left={1 & i}/>))}
     </DesignsContainer>
 

@@ -9,7 +9,7 @@ const ProjectItem = (props) => {
   }, [])
 
   return (
-    <ProjectContainer left={props.left}>
+    <ProjectContainer left={props.left} id={props.index === 0 && 'projects'}>
       <ProjectTitle left={props.left}>{props.name}</ProjectTitle>
       <ProjectImage fluid={props.image}/>
       <ProjectInformation left={props.left}>
@@ -26,7 +26,7 @@ const ProjectItem = (props) => {
           <ProjectDetailContent>{props.description}</ProjectDetailContent>
         </ProjectDescription>
       </ProjectInformation>
-      <ActionButton left={props.left}>VISIT WEBSITE</ActionButton>
+      <ActionButton left={props.left} href={props.link} target="_blank" rel="noreferrer">VISIT WEBSITE</ActionButton>
       <Break />
     </ProjectContainer>
   )

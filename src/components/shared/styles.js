@@ -61,7 +61,8 @@ font-size: calc(6rem + 3vw);
 ${MobileBorder}
 `
 
-export const ActionButtonContainer = styled(Button)`
+export const ActionButtonContainer = styled.a`
+cursor: pointer;
 grid-area: button;
 align-self: flex-start;
 justify-self: ${props => props.left ? 'flex-start' : 'flex-end'};
@@ -73,6 +74,9 @@ font-family: "HK Grotesk Bold";
 color: ${constants.backgroundColor};
 max-width: 12rem;
 margin: 5vh auto;
+&:visited{
+  color: ${constants.backgroundColor};
+}
 &::after{
   content: "";
   pointer-events: none;

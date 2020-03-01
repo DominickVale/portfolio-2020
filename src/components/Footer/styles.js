@@ -32,6 +32,10 @@ width: 100%;
 ${MobileBorder};
 `
 
+export const IconWrapper = styled.a`
+
+`;
+
 export const ContactInfo = styled.div`
 grid-area: info;
 display: flex;
@@ -91,7 +95,7 @@ font-size: calc(0.6rem + 0.3vw);
   display: block;
 }`
 
-export const StyledArrow = styled.div`
+export const StyledArrow = styled.a`
 display: none;
 object-fit: contain;
 transform: rotateX(180deg);
@@ -103,6 +107,10 @@ transform: rotateX(180deg);
   font-weight: bold;
   opacity: 0.4;
   font-size: calc(0.6rem + 0.2vw);
+}
+
+& p, svg{
+  cursor: pointer;
 }
 @media only screen and (min-width: 800px){
   display: block;

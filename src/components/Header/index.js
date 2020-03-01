@@ -21,10 +21,10 @@ const Header = () => {
             <path opacity="0.4" d="M0 8H22V5.81818H0V8ZM0 2.18182H22V0H0V2.18182Z" fill="#FAF3F3"/>
           </svg>
         </HamButton>
-        <Link href="#">about</Link>
-        <Link href="#">projects</Link>
-        <Link href="#">lab</Link>
-        <Link href="#">contacts</Link>
+        <Link href="#about">about</Link>
+        <Link href="#projects">projects</Link>
+        <Link href="#designs">designs</Link>
+        <Link href="#contacts">contacts</Link>
       </Nav>
     </StyledHeader>
   )

@@ -10,6 +10,10 @@ import './styles.css';
 
 
 const GlobalStyle = createGlobalStyle`
+html{
+  scroll-behavior: smooth;
+}
+
 body{
   background-color: ${constants.backgroundColor};
   overflow-x: hidden;

@@ -11,5 +11,6 @@ export default {
   highlightColor: '#D52A24',
   projectTitleSize: '8vw',
   projectTitleSizeDesktop: 'calc(3rem + 2vw)',
-  projectDescriptionColor: '#C4C4C4'
+  projectDescriptionColor: '#C4C4C4',
+  selectionBG: 'rgb(14, 20, 13)'
 }

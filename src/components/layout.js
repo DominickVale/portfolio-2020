@@ -7,11 +7,14 @@ import constants from "../constants"
 import 'normalize.css';
 import './styles.css';
 
+import noise from '../../public/images/noise.png'
+import {noiseAnimation} from '../components/shared/animations'
 
 
 const GlobalStyle = createGlobalStyle`
 html{
   scroll-behavior: smooth;
+  background: black;
 }
 
 body{
@@ -19,6 +22,22 @@ body{
   overflow-x: hidden;
   padding: 0 33px;
   color: beige;
+  &::after{
+    content: '';
+    user-select: none;
+    pointer-events: none;
+    display: block;
+    position: fixed;
+    height: 300vh;
+    width: 300vw;
+    z-index: 1;
+    left: -100%;
+    top: -100%;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+    background-image: url(${noise});
+    animation: ${noiseAnimation} 1s steps(10) alternate infinite;
+  }
   @media only screen and (min-width: 720px){
     padding: 0 62px;
   }

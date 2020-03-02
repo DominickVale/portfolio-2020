@@ -7,6 +7,10 @@ import {MobileBorder, Highlight} from '../shared/styles'
 
 const _isChrome = typeof window !== "undefined" && (!!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime));
 
+
+export const ProjectsContainer = styled.section`
+`
+
 export const ProjectContainer = styled.article`
 display: flex;
 flex-direction: column;
@@ -55,7 +59,7 @@ font-family: "HK Grotesk Bold";
   width: 200%;
   left: 0;
   top: 0;
-  z-index: -1;
+  z-index: 1;
   ${props => props.left && css`
   transform: scaleX(-1);
   left: auto;

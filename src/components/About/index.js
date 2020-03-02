@@ -35,7 +35,7 @@ const About = () => {
           <IntroSubCaption>Let's go. In and out. Two&nbsp;minutes&nbsp;adventure.</IntroSubCaption>
         </Intro>
       <Description><Highlight>Who am i?</Highlight><br/><br/>
-        I’m Domenico Vale, a 21 years old guy from Italy whose interests range from web development/design to reverse engineering, rock, nature & sportbikes.&nbsp;
+        I’m a 21 years old guy from Italy whose interests range from web development/design to reverse engineering, rock, nature & sportbikes.&nbsp;
         <Read more /><br/><br/>
 
         {(descriptionExpanded || isDesktop) && (

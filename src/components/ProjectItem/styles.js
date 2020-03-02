@@ -117,7 +117,7 @@ margin-top: 1rem;
 `
 
 export const ProjectDetailCaption = styled(Highlight)`
-  font-size: calc(0.7rem + 0.2vw);
+font-size: calc(0.6rem + 0.2vw);
 font-family: "Space Mono";
 margin-right: 2rem;
 float: ${props => props.float ? props.float : 'none'};
@@ -128,7 +128,7 @@ max-width: 2rem;
 
 export const ProjectDetailContent = styled.span`
 font-family: ${props => props.bold ? "HK Grotesk Bold" : "HK Grotesk Regular"};
-font-size: ${props => props.bold ? 'calc(0.7rem + 0.3vw)' : 'calc(0.8rem + 0.4vw)'};
+font-size: ${props => props.bold ? 'calc(0.7rem + 0.3vw)' : 'calc(0.6rem + 0.4vw)'};
 color: ${constants.projectDescriptionColor};
 `
 

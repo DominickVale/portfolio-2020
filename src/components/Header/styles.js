@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import constants from '../../constants'
 import {Button} from '../shared/styles'
+import {navLinkBlink} from '../shared/animations'
 
 export const StyledHeader = styled.header`
 position: relative;
@@ -28,7 +29,13 @@ font-family: 'Space Mono';
 color: ${constants.navLinkColor};
 font-size: ${constants.navLinkSize};
 font-weight: ${constants.navLinkWeight};
-margin-right: 1.5rem;
+margin: -0.2rem 0;
+padding: 0.8rem;
+transition: color .1s ease-in .28s;
+&:hover{
+animation: ${navLinkBlink} 0.2s ease;
+color: ${constants.highlightColor};
+}
 @media only screen and (min-width: 720px){
   display: inline-block;
 }

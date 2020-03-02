@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import constants from '../../constants'
 
 import {MobileBorder} from '../shared/styles'
+import {slowBlink} from '../shared/animations'
 
 
 
@@ -105,12 +106,26 @@ ${MobileBorder}
 `
 
 export const StyledArrow = styled.div`
+position: relative;
 margin-top: 5vh;
 text-align: center;
 transform: scale(0.6);
 object-fit: contain;
 max-width: 10rem;
+width: 10rem;
 align-self: center;
+height: 11rem;
+p{
+  font-family: "Space Mono";
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: ${constants.descriptionColor};
+  opacity: 0.6;
+  position: absolute;
+  left: 25%;
+  bottom: 0;
+  animation: ${slowBlink} 8s infinite linear;
+}
 @media only screen and (min-width: 900px){
   position: absolute;
   top: 50vh;

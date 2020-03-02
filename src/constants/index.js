@@ -9,6 +9,8 @@ export default {
   headingColor: '#F3E7E7',
   descriptionColor: '#A7A7A7',
   highlightColor: '#D52A24',
+  highlightColorDarker: 'rgb(198, 22, 17)',
+  highlightColorDarkest: 'rgba(160,25,21)',
   projectTitleSize: '8vw',
   projectTitleSizeDesktop: 'calc(3rem + 2vw)',
   projectDescriptionColor: '#C4C4C4',

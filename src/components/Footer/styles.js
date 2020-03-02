@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import constants from '../../constants'
 
 import {MobileBorder} from '../shared/styles'
+import {navLinkBlink} from '../shared/animations'
 
 export const FooterContainer = styled.div`
 display: flex;
@@ -33,7 +34,16 @@ ${MobileBorder};
 `
 
 export const IconWrapper = styled.a`
-
+svg g, path{
+  transition: all 0.1s ease 0.38s;
+}
+&:hover{
+  animation: ${navLinkBlink} 0.38s linear;
+  svg g, path{
+    fill: ${constants.highlightColorDarkest};
+    opacity: 1;
+  }
+}
 `;
 
 export const ContactInfo = styled.div`

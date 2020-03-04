@@ -28,7 +28,7 @@ const Footer = () => {
       </ContactInfo>
       <QuoteSection>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae consequat non diam sed cursus. Eget aliquam egestas faucibus enim at. A nec, malesuada aliquam...</QuoteSection>
       <Icons />
-      <DevelopedBy><p>developed & designed by <a href="https://www.facebook.com/dominickveil" target="_blank" rel="noreferrer"><Highlight>Dominick</Highlight></a>.</p></DevelopedBy>
+      <DevelopedBy><p>developed & designed by <a href="https://www.facebook.com/dominickveil" target="_blank" rel="noopener noreferrer"><Highlight>Yours truly</Highlight></a>.</p></DevelopedBy>
     </FooterContainer>
   )
 }

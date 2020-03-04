@@ -74,8 +74,10 @@ color: ${constants.navLinkColor};
 font-family: "HK Grotesk Bold";
 font-size: 1rem;
 p{
-  margin: 0;
-  margin: 0.6rem 0;
+  margin: 0.5rem 0;
+}
+p:last-of-type{
+  margin-top: 0.6rem;
 }
 `
 
@@ -86,7 +88,7 @@ font-size: 0.8rem;
 text-align: center;
 width: 100%;
 color:  ${constants.descriptionColor};
-opacity: 0.4;
+opacity: 0.6;
 margin: 0;
 margin-top: 7vh;
 p{

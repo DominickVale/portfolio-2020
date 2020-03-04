@@ -12,7 +12,7 @@ export default {
   highlightColorDarker: 'rgb(198, 22, 17)',
   highlightColorDarkest: 'rgba(160,25,21)',
   projectTitleSize: '8vw',
-  projectTitleSizeDesktop: 'calc(3rem + 2vw)',
+  projectTitleSizeDesktop: 'calc(1.8rem + 2vw)',
   projectDescriptionColor: '#C4C4C4',
   selectionBG: 'rgb(14, 20, 13)'
 }

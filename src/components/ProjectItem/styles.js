@@ -51,7 +51,7 @@ font-family: "HK Grotesk Bold";
   position: absolute;
   border-top: solid;
   border-image-slice: 16 16 16 16;
-  border-image-width: 20px 20px 20px 20px;
+  border-image-width: 12px 12px 12px 12px;
   border-image-outset: 0px 0px 0px 0px;
   border-image-repeat: stretch stretch;
   border-image-source: url(${objectHeadline1});

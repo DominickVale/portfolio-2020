@@ -3,22 +3,52 @@ import constants from '../../constants'
 import Img from 'gatsby-image'
 
 
-export const DesignTitle = styled.h1`
+export const DesignTitle = styled.article`
 display: none;
-font-family: "HK Grotesk Bold";
-font-size: 10vw;
--webkit-text-stroke: 1px ${constants.headingColor};
-color: transparent;
-text-transform: uppercase;
-text-align: right;
-margin-top: 33vh;
+position: relative;
+cursor: pointer;
+margin: 33vh 0;
+h1{
+  font-family: "HK Grotesk Bold";
+  font-size: 7vw;
+  mix-blend-mode: exclusion;
+  color: transparent;
+  text-transform: uppercase;
+  text-align: right;
+  -webkit-text-stroke: 1px ${constants.headingColor};
+  opacity: 0.6
+}
+&:hover{
+  h1{
+    opacity: 1;
+  }
+}
 @media only screen and (min-width: 720px){
   display: block;
 }
 ${props => props.left && css`
-text-align: left;
-`}
+h1{
+  text-align: left;
+}`
+}
 `
+
+export const BackgroundHoverImage = styled.span`
+pointer-events: none;
+opacity: 0;
+position: absolute !important;
+left: 0;
+top: 0;
+transition: transform 1.5s ease-out, opacity 1.5s ease-out;
+.gatsby-image-wrapper{
+  height: 70vh;
+  width: 50vw;
+  img{
+    object-fit: contain !important;
+  }
+}
+`
+
 
 export const DesignsContainer = styled.section`
 display: flex;

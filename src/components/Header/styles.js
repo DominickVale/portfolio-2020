@@ -46,7 +46,7 @@ display: none;
 position: absolute;
 left: 0;
 bottom: -1rem;
-width: 100%;
+width: 0%;
 @media only screen and (min-width: 720px){
   display: block;
 }

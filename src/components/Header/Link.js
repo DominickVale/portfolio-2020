@@ -2,12 +2,12 @@ import React from 'react'
 
 import {StyledLink} from './styles'
 
-const Link = (props) => {
+const Link = React.forwardRef((props, ref) => {
   return (
-    <StyledLink {...props}>
+    <StyledLink {...props} ref={ref}>
       
     </StyledLink>
   )
-}
+})
 
 export default Link

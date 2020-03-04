@@ -1,4 +1,61 @@
-import styled, {keyframes} from 'styled-components'
+import {keyframes} from 'styled-components'
+import gsap, {TimelineMax, TweenMax, Expo, Linear, CSSPlugin} from 'gsap'
+
+
+
+export const animateRight = (target) =>
+  TweenMax.to(target, {
+    width: '100%',
+    duration: 2,
+    ease: Expo.easeInOut,
+  })
+
+
+
+
+export const fadeInT = (target, duration, delay) => 
+  TweenMax.from(target, {
+    opacity: 0,
+    duration: duration || 1,
+    ease: Expo.easeIn,
+    delay: delay || 0
+  })
+
+
+export const blinkIn = (target, delay) =>
+  TweenMax.from(target, {
+    opacity: 0,
+    repeat: 12,
+    duration: .08,
+    ease: Linear,
+    delay: delay || 0
+  });
+
+
+
+
+
+export const staggerBlinkIn = (targets, delay) =>
+  TweenMax.from(targets, {
+    opacity: 0,
+    duration: 0.08,
+    ease: Linear,
+    delay: delay || 0,
+    stagger: {
+      repeat: 10,
+      each: 0.1,
+    }
+  })
+
+
+
+
+
+
+
+
+
+
 
 export const navLinkBlink = keyframes`
 from{
@@ -44,7 +101,7 @@ to{
 
 export const slowBlink = keyframes`
 from{
-  opacity: 0.2;
+  opacity: 0.4;
 }
 
 50%{
@@ -52,7 +109,7 @@ from{
 }
 
 to{
-  opacity: 0.2;
+  opacity: 0.4;
 }
 `
 
@@ -71,15 +128,6 @@ export const actionBgGlitch = keyframes`
 
 100%{
   transform: translate(0px, 0px) scale(1);
-}
-`
-
-export const openMenu = keyframes`
-from{
-  height: 0;
-}
-to{
-  height: 100%
 }
 `
 

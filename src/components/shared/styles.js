@@ -45,23 +45,6 @@ cursor: pointer;
 `}
 `
 
-export const SectionHeadline = styled.h2`
-user-select: none;
-margin-top: 25vh;
-margin-bottom: 10vh;
-font-family: "HK Grotesk Bold";
-font-size: 12vw;
-color: transparent;
--webkit-text-stroke: 1px ${constants.sectionHeadlineColor};
-@media only screen and (min-width: 800px){
-font-size: calc(4rem + 2.6vw);
-}
-@media only screen and (min-width: 1440px){
-font-size: calc(6rem + 3vw);
-}
-${MobileBorder}
-`
-
 export const ActionButtonContainer = styled.a`
 grid-area: button;
 cursor: pointer;

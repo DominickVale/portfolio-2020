@@ -98,9 +98,10 @@ p{
 }
 `
 
-export const QuoteSection = styled.section`
+export const QuoteSection = styled.blockquote`
 grid-area: quote;
 display: none;
+margin: 0;
 margin-bottom: 5vh;
 color: ${constants.descriptionColor};
 font-family: "Space Mono";

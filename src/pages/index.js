@@ -1,4 +1,5 @@
 import React from "react"
+import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from 'gatsby-image'
 import styled from 'styled-components'
@@ -77,31 +78,39 @@ const IndexPage = () => {
   `
 
   return(
-  <Layout id="about">
-    <About/>
+    <>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <meta name="description" content="I’m a 21 years old Front-end Web Developer from Italy. I’m currently looking for a job as JavaScript Front-end Developer." />
+      <title>Domenico Vale - Web developer & designer</title>
+      <link rel="canonical" href="https://dominick-portfolio-2020-test.netlify.com/" />
+    </Helmet>
+    <Layout id="about">
+      <About/>
 
-    <SectionHeadline>&lt;PROJECTS/&gt;</SectionHeadline>
-    <ProjectsContainer id="projects">
-    {PROJECTS.map((project, i) => (<ProjectItem {...project} index={i} image={data[project.image].childImageSharp.fluid} key={project.name} left={1 & i}/>))}
-    </ProjectsContainer>
+      <SectionHeadline>&lt;PROJECTS/&gt;</SectionHeadline>
+      <ProjectsContainer id="projects">
+      {PROJECTS.map((project, i) => (<ProjectItem {...project} index={i} image={data[project.image].childImageSharp.fluid} key={project.name} left={1 & i}/>))}
+      </ProjectsContainer>
 
-    <SectionHeadline right>&lt;DESIGNS/&gt;</SectionHeadline>
-    <DesignsContainer id="designs">
-    {DESIGNS.map((design, i) => (<DesignItem {...design} image={data[design.image].childImageSharp.fluid} key={design.name} left={1 & i}/>))}
-    </DesignsContainer>
+      <SectionHeadline right>&lt;DESIGNS/&gt;</SectionHeadline>
+      <DesignsContainer id="designs">
+      {DESIGNS.map((design, i) => (<DesignItem {...design} image={data[design.image].childImageSharp.fluid} key={design.name} left={1 & i}/>))}
+      </DesignsContainer>
 
-    <SectionHeadline contacts>&lt;CONTACTS/&gt;</SectionHeadline>
-    <RoseContainer
-      init={{
-        smoothScrollingDuration: 200,
-        smoothScrolling: true,
-        forceHeight: true
-      }}>
-      <Parallax data={roseParallaxData}>
-        <Rose src={rose} />
-      </Parallax>
-    </RoseContainer>
-  </Layout>
+      <SectionHeadline contacts>&lt;CONTACTS/&gt;</SectionHeadline>
+      <RoseContainer
+        init={{
+          smoothScrollingDuration: 200,
+          smoothScrolling: true,
+          forceHeight: true
+        }}>
+        <Parallax data={roseParallaxData}>
+          <Rose src={rose} />
+        </Parallax>
+      </RoseContainer>
+    </Layout>
+  </>
 )}
 
 export default IndexPage

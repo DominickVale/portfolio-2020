@@ -1,3 +1,12 @@
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = 'https://dominick-portfolio-2020-test.netlify.com/',
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env
+const isNetlifyProduction = NETLIFY_ENV === 'production'
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -25,11 +34,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Domenico Vale - Web developer & designer`,
+        short_name: `Domenico Vale's portfolio`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#0E0D0D`,
+        theme_color: `#D52A24`,
         display: `minimal-ui`,
       },
     },
@@ -43,6 +52,27 @@ module.exports = {
           },
         ],
       }
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: '*' }],
+          },
+          'branch-deploy': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+          'deploy-preview': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+        },
+      },
     },
     `gatsby-plugin-styled-components`
     // this (optional) plugin enables Progressive Web App + Offline functionality

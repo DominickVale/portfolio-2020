@@ -26,24 +26,6 @@ body{
   overflow-x: hidden;
   padding: 0 33px;
   color: beige;
-  &::after{
-    content: '';
-    user-select: none;
-    pointer-events: none;
-    display: block;
-    position: fixed;
-    height: 300vh;
-    width: 300vw;
-    z-index: 1;
-    left: -100%;
-    top: -100%;
-    opacity: 0.3;
-    ${!isIE && css`
-      mix-blend-mode: overlay;
-      background-image: url(${noise});
-      animation: ${noiseAnimation} 1s steps(10) alternate infinite;
-    `}
-  }
   @media only screen and (min-width: 720px){
     padding: 0 62px;
   }
@@ -84,7 +66,33 @@ const Container = styled.div`
   }
 `
 
-
+const NoiseBG = styled.div`
+z-index: 1;
+opacity: 0.5;
+position: fixed;
+pointer-events: none;
+mix-blend-mode: overlay;
+min-height: 100vh;
+height: 100%;
+width: 100%;
+top: 0;
+left: 0;
+&::after{
+  content: '';
+  user-select: none;
+  pointer-events: none;
+  background-image: url(${noise});
+  background-repeat: repeat;
+  background-position: 0;
+  animation: ${noiseAnimation} 1s steps(5) alternate infinite;
+  transform: translate(0,0);
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  left: -50%;
+  top: -50%;
+}
+`
 
 
 const Layout = ({ children }) => {
@@ -92,6 +100,7 @@ const Layout = ({ children }) => {
 
   return (
     <Container>
+      {!isIE && (<NoiseBG/>)}
       <GlobalStyle />
       <Header/>
       {children}

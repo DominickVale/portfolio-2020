@@ -25,7 +25,8 @@
     "react-responsive": "^8.0.3",
     "react-skrollr": "^1.0.4",
     "react-typist": "^2.0.5",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.0.1",
+    "three": "^0.114.0"
   },
   "devDependencies": {
     "prettier": "^1.19.1"

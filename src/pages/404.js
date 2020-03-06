@@ -1,4 +1,6 @@
 import React from "react"
+import { Link } from "gatsby"
+import {Helmet} from 'react-helmet'
 import styled from 'styled-components'
 
 import Layout, {NoiseBG} from "../components/layout"
@@ -18,7 +20,10 @@ align-items: center;
 
 `
 
-const FourOFour = styled.h1`
+const FourOFour = styled(Link)`
+cursor: pointer;
+text-decoration: none;
+user-select: none;
 font-family: "Space Mono";
 font-size: 10vw;
 font-weight: bold;
@@ -29,8 +34,14 @@ text-align: center;
 
 const NotFoundPage = () => (
   <Wrapper>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <meta name="description" content="I’m a 21 years old Front-end Web Developer from Italy. I’m currently looking for a job as JavaScript Front-end Developer." />
+      <title>Domenico Vale doesn't know what are you trying to access here</title>
+      <link rel="canonical" href="https://dominick-portfolio-2020-test.netlify.com/" />
+    </Helmet>
   {!isIE && (<NoiseBG />)}
-    <FourOFour>404 much?</FourOFour>
+    <FourOFour to="/">404 much?</FourOFour>
   </Wrapper>
 )
 

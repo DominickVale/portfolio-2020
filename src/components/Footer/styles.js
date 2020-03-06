@@ -27,6 +27,7 @@ display: flex;
 justify-content: space-between;
 justify-self: center;
 width: 100%;
+border: none !important;
 @media only screen and (min-width: 800px){
   max-width: 60%;
 }

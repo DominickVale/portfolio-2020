@@ -2,7 +2,7 @@ import React from "react"
 
 import Header from "./Header"
 import Footer from "./Footer"
-import styled,{createGlobalStyle} from 'styled-components'
+import styled,{createGlobalStyle, css} from 'styled-components'
 import constants from "../constants"
 import 'normalize.css';
 import './styles.css';
@@ -10,6 +10,10 @@ import './styles.css';
 import noise from '../../public/images/noise.png'
 import {noiseAnimation} from '../components/shared/animations'
 
+
+
+
+const isIE = /*@cc_on!@*/false || !!document.documentMode;
 
 const GlobalStyle = createGlobalStyle`
 html{
@@ -34,9 +38,11 @@ body{
     left: -100%;
     top: -100%;
     opacity: 0.3;
-    mix-blend-mode: overlay;
-    background-image: url(${noise});
-    animation: ${noiseAnimation} 1s steps(10) alternate infinite;
+    ${!isIE && css`
+      mix-blend-mode: overlay;
+      background-image: url(${noise});
+      animation: ${noiseAnimation} 1s steps(10) alternate infinite;
+    `}
   }
   @media only screen and (min-width: 720px){
     padding: 0 62px;

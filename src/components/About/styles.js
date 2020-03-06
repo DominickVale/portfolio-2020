@@ -42,6 +42,7 @@ export const Intro = styled.section`
 display: flex;
 flex-direction: column;
 margin-top: -6vh;
+border: none !important;
 @media only screen and (min-width: 720px){
   margin-left: 1rem;
 }
@@ -92,6 +93,7 @@ color: ${constants.descriptionColor};
 margin-top: 9vh;
 font-size: 0.9rem;
 min-height: 20vh;
+border: none !important;
 @media only screen and (min-width: 900px){
   margin-left: 50vw;
   margin-top: 0vh;

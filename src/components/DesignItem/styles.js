@@ -2,6 +2,7 @@ import styled, {css} from 'styled-components'
 import constants from '../../constants'
 import Img from 'gatsby-image'
 
+const isIE = /*@cc_on!@*/false || !!document.documentMode;
 
 export const DesignTitle = styled.article`
 display: none;
@@ -12,7 +13,7 @@ h1{
   font-family: "HK Grotesk Bold";
   font-size: 7vw;
   mix-blend-mode: exclusion;
-  color: transparent;
+  color: ${isIE ? constants.headingColor : 'transparent'};
   text-transform: uppercase;
   text-align: right;
   -webkit-text-stroke: 1px ${constants.headingColor};

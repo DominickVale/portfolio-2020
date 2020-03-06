@@ -19,6 +19,7 @@ const About = () => {
   const arrowRef = useRef(null)
 
   const isDesktop = useMediaQuery({query: '(min-width: 800px)'})
+  const isIE = /*@cc_on!@*/false || !!document.documentMode;
 
   const readMoreHandler = () => {
     setDescriptionExp(state => !state)
@@ -27,19 +28,54 @@ const About = () => {
 
   useEffect(() => {
     const tl = new TimelineMax()
-
-    tl.add(blinkIn(bgH1Ref.current), 2.4)
-      .add(blinkIn(introCaptionRef.current), '-=1')
-      .add(fadeInT(subCaptionRef.current), '+=5')
-      .add(blinkIn(descriptionRef.current), '+=1')
-      .add(fadeInT(readMoreRef.current), '+=1.2')
-      .add(blinkIn(arrowRef.current), '+=1.8')
+    if(!isIE) tl.add(blinkIn(bgH1Ref.current), 2.4)
+                .add(blinkIn(introCaptionRef.current), '-=1')
+                .add(fadeInT(subCaptionRef.current), '+=5')
+                .add(blinkIn(descriptionRef.current), '+=1')
+                .add(fadeInT(readMoreRef.current), '+=1.2')
+                .add(blinkIn(arrowRef.current), '+=1.8')
   }, [])
+
+  /** Fix for typewriter effect completely hiding text on IE */
+  const IEpolyFill = (<>
+      <Intro>
+        <IntroCaption ref={introCaptionRef}>
+            I’m&nbsp;<Highlight darker>Domenico Vale</Highlight>,<br/>
+            Front&#8209;end&nbsp;Web&nbsp;Developer<br/>
+            &&nbsp;Designer.
+        </IntroCaption>
+        <IntroSubCaption ref={subCaptionRef}>Let's go. In and out. Two&nbsp;minutes&nbsp;adventure.</IntroSubCaption>
+      </Intro>
+    <Description ref={descriptionRef}>
+        <Highlight>Who am i?</Highlight><br/><br/>
+        I’m a 21 years old guy from Italy whose interests range from web development/design to reverse engineering, nature&nbsp;&&nbsp;sportbikes.&nbsp;
+        <Read more
+          ref={readMoreRef}
+          expanded={descriptionExpanded}
+          handler={readMoreHandler}/><br/><br/>
+
+        {(descriptionExpanded || isDesktop) && (
+          <>
+            I see life as a progressive and competitive MMoRPG Game, in which you are supposed to improve on your skills and become the best possible version of yourself
+            before&nbsp;the&nbsp;end&nbsp;game.&nbsp;
+          <Read less ref={readMoreRef}
+            expanded={descriptionExpanded}
+            handler={readMoreHandler}/><br/><br/>
+        </>)}
+        
+        I’m currently looking for a job as JavaScript 
+        Front&#8209;end&nbsp;Developer.
+    </Description>
+  </>)
+
+
 
 
   return (
     <Container>
       <BackgroundH1 ref={bgH1Ref}>&lt;HI/&gt;</BackgroundH1>
+      {isIE ? IEpolyFill : (
+      <>
         <Intro>
           <IntroCaption ref={introCaptionRef}>
             <TypedEffect intro>
@@ -70,11 +106,12 @@ const About = () => {
               handler={readMoreHandler}/><br/>
           </>)}
           
-        <TypedEffect startDelay={isDesktop ? 18000 : 14000}>
+        <TypedEffect startDelay={isDesktop ? 19000 : 14000}>
           I’m currently looking for a job as JavaScript 
           Front&#8209;end&nbsp;Developer.
         </TypedEffect>
       </Description>
+      </>)}
       <StyledArrow ref={arrowRef}>
         <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path opacity="0.6" d="M44.25 76.0625V0.5H55.75V76.0625V77.2681L56.6032 76.4164L91.1872 41.8943L99.2929 50L50 99.2929L0.707107 50L8.87468 41.8324L43.3961 76.4157L44.25 77.2711V76.0625Z" stroke="#F3E7E7"/>

@@ -6,6 +6,7 @@ import objectHeadline1 from '../../../public/images/object_headline_1.svg'
 import {MobileBorder, Highlight} from '../shared/styles'
 
 const _isChrome = typeof window !== "undefined" && (!!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime));
+const isIE = /*@cc_on!@*/false || !!document.documentMode;
 
 
 export const ProjectsContainer = styled.section`
@@ -44,6 +45,7 @@ color: ${constants.headingColor};
 font-size: ${constants.projectTitleSize};
 text-align: center;
 font-family: "HK Grotesk Bold";
+border: none !important;
 &::before{
   overflow-x: hidden;
   content: "";
@@ -86,8 +88,10 @@ ${MobileBorder}
 
 export const ProjectImage = styled(Img)`
 grid-area: image;
+z-index: 2;
 max-height: 60vh !important;
 margin-bottom: 4vh;
+border: none !important;
 img{
   object-fit: contain !important;
 }

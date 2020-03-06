@@ -2,8 +2,11 @@ import styled from 'styled-components'
 import constants from '../../constants'
 import { MobileBorder } from '../shared/styles'
 
+const isIE = /*@cc_on!@*/false || !!document.documentMode;
+
 
 export const StyledSectionHeadline = styled.h2`
+border: none !important;
 position: relative;
 user-select: none;
 margin-top: 25vh;
@@ -12,7 +15,7 @@ h1{
   margin: 0;
   font-family: "HK Grotesk Bold";
   font-size: 12vw;
-  color: transparent;
+  color: ${isIE ? constants.headingColor : 'transparent'};
   -webkit-text-stroke: 1px ${constants.sectionHeadlineColor};
 }
 @media only screen and (min-width: 800px){

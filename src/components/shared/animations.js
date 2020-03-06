@@ -32,15 +32,20 @@ export const blinkIn = (target, delay) =>
   });
 
 
+export const openMenu = (target) => {
+  TweenMax.from(target, {
+    top: '-100vh',
+    duration: 2,
+    ease: Expo.easeInOut
+  })
+}
 
 
-
-export const staggerBlinkIn = (targets, delay) =>
+export const staggerBlinkIn = (targets, delay, duration) =>
   TweenMax.from(targets, {
     opacity: 0,
     duration: 0.08,
     ease: Linear,
-    delay: delay || 0,
     stagger: {
       repeat: 10,
       each: 0.1,
@@ -139,9 +144,39 @@ to{
   opacity: 1;
 }`
 
+
 export const noiseAnimation = keyframes`
-0%, 100% {transform: translate(12%, -2%) rotate(0deg);}
-30% {transform: translate(-2%, -10%) rotate(90deg);}
-70% {transform: translate(4%, -24%) rotate(180deg);}
-90% {transform: translate(-4%, 14%) rotate(270deg);}
+0% {
+	transform: translate(-5%, 10%)
+}
+20% {
+  transform: translate(20%, 0%)
+}
+20% {
+  transform: translate(-5%, -10%)
+}
+30% {
+  transform: translate(0%, 20%)
+}
+40% {
+  transform: translate(-8%, -2%)
+}
+50% {
+  transform: translate(10%, 5%)
+}
+60% {
+  transform: translate(0%, 0%)
+}
+70% {
+  transform: translate(-20%, -20%)
+}
+80% {
+  transform: translate(0%, 20%)
+}
+90% {
+  transform: translate(-5%, 0%)
+}
+200% {
+  transform: translate(20%, 10%)
+}
 `

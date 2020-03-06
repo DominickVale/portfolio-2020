@@ -17,7 +17,7 @@ const Menu = (props) => {
   }, [])
 
   const closeHandler = () => {
-    tl.reverse(1).then(props.onClose)
+    tl.reverse(2).then(props.onClose)
   }
 
 

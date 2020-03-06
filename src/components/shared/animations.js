@@ -33,8 +33,8 @@ export const blinkIn = (target, delay) =>
 
 
 export const openMenu = (target) => {
-  TweenMax.from(target, {
-    top: '-100vh',
+  TweenMax.to(target, {
+    top: '0vh',
     duration: 2,
     ease: Expo.easeInOut
   })

@@ -7,7 +7,7 @@ export const MenuWrapper = styled.nav`
 overflow: hidden;
 position: fixed;
 left: 0;
-top: 0;
+top: -100vh;
 height: 100vh;
 width: 100vw;
 background-color: ${constants.backgroundColorOpacity};

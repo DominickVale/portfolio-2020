@@ -18,6 +18,16 @@ justify-content: center;
 export const HamButton = styled(Button)`
 padding: 0.8rem;
 margin: 0.4rem;
+svg path{
+  transition: opacity 0.2s ease-in;
+}
+&:hover, &:active{
+  svg{
+    path{
+      opacity: 1;
+    }
+  }
+}
 @media only screen and (min-width: 720px){
   display: none;
 }

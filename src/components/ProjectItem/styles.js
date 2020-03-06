@@ -132,8 +132,11 @@ max-width: 2rem;
 
 export const ProjectDetailContent = styled.span`
 font-family: ${props => props.bold ? "HK Grotesk Bold" : "HK Grotesk Regular"};
-font-size: ${props => props.bold ? 'calc(0.7rem + 0.3vw)' : 'calc(0.6rem + 0.4vw)'};
+font-size: ${props => props.bold ? 'calc(0.9rem + 0.3vw)' : 'calc(0.8rem + 0.4vw)'};
 color: ${constants.projectDescriptionColor};
+@media only screen and (min-width: 800px){
+font-size: ${props => props.bold ? 'calc(0.7rem + 0.3vw)' : 'calc(0.6rem + 0.4vw)'};
+}
 `
 
 export const ProjectDescription = styled.div`

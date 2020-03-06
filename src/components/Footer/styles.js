@@ -53,6 +53,7 @@ display: flex;
 justify-content: space-between;
 max-width: 30rem;
 margin: 5vh auto 10vh auto;
+z-index: 0;
 `
 
 export const Captions = styled.div`

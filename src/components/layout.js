@@ -66,7 +66,7 @@ const Container = styled.div`
   }
 `
 
-const NoiseBG = styled.div`
+export const NoiseBG = styled.div`
 z-index: 1;
 opacity: 0.5;
 position: fixed;

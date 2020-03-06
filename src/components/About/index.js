@@ -93,7 +93,7 @@ const About = () => {
           <Read more
             ref={readMoreRef}
             expanded={descriptionExpanded}
-            handler={readMoreHandler}/><br/>
+            handler={readMoreHandler}/><br/>{(!isDesktop && !descriptionExpanded) && (<br/>)}
 
           {(descriptionExpanded || isDesktop) && (
             <>
@@ -103,7 +103,7 @@ const About = () => {
             </TypedEffect>
             <Read less ref={readMoreRef}
               expanded={descriptionExpanded}
-              handler={readMoreHandler}/><br/>
+              handler={readMoreHandler}/><br/>{!isDesktop && (<br/>)}
           </>)}
           
         <TypedEffect startDelay={isDesktop ? 19000 : 14000}>

@@ -20,6 +20,7 @@ h1{
   opacity: 0.6
 }
 &:hover{
+  z-index: 10;
   h1{
     opacity: 1;
   }

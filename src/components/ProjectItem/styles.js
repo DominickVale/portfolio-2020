@@ -61,7 +61,6 @@ border: none !important;
   width: 200%;
   left: 0;
   top: 0;
-  z-index: 1;
   ${props => props.left && css`
   transform: scaleX(-1);
   left: auto;
@@ -108,14 +107,11 @@ grid-area: details;
 max-width: 90%;
 margin-left: 1rem;
 @media only screen and (min-width: 800px){
-  ${props => props.left ? 'margin-right: 10vw' : 'margin-left: 10vw'}
+margin-left: 10vw;
 }
 @media only screen and (min-width: 1440px){
-  ${props => props.left ? 'margin-right: 20vw' : 'margin-left: 20vw'}
+margin-left: 20vw;
 }
-${props => props.left && css`
-  
-`}
 `
 export const ProjectDetail = styled.span`
 display: flex;

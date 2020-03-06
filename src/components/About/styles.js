@@ -19,7 +19,6 @@ margin-top: 10vh;
 
 export const BackgroundH1 = styled.h1`
 margin: 0;
-z-index: 1;
 position: absolute;
 left: -10vw;
 top: -4.5rem;
@@ -88,6 +87,7 @@ margin-top: -0.9rem;
 `
 
 export const Description = styled.section`
+z-index: 10;
 font-family: "Space Mono";
 color: ${constants.descriptionColor};
 margin-top: 9vh;
@@ -95,6 +95,7 @@ font-size: 0.9rem;
 min-height: 20vh;
 border: none !important;
 @media only screen and (min-width: 900px){
+  font-size: 1rem;
   margin-left: 50vw;
   margin-top: 0vh;
   margin-right: 1rem;

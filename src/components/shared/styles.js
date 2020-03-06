@@ -95,7 +95,7 @@ transition: all 0.5s ease;
   margin: 5% 0;
   right: 10%;
   ${props => props.left && css`
-  right: -3.8%;
+  right: -41.5%;
   `}
 }
 `

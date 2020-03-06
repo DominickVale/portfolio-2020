@@ -2,9 +2,9 @@ import styled from 'styled-components'
 import constants from '../../constants'
 
 import {Button, MenuBorder} from '../shared/styles'
-import {openMenu, navLinkBlink} from '../shared/animations'
 
 export const MenuWrapper = styled.nav`
+overflow: hidden;
 position: fixed;
 left: 0;
 top: 0;
@@ -14,7 +14,6 @@ background-color: ${constants.backgroundColorOpacity};
 z-index: 1000;
 display: flex;
 justify-content: center;
-animation: ${openMenu} .3s ease-in, ${navLinkBlink} .3s ease;
 @media only screen and (min-width: 720px){
   display: none;
 }

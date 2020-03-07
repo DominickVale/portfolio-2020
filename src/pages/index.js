@@ -7,7 +7,7 @@ import About from "../components/About"
 import ProjectItem from '../components/ProjectItem'
 import DesignItem from '../components/DesignItem'
 import SectionHeadline from '../components/SectionHeadline'
-import Rose from '../components/Footer/Rose'
+//import Rose from '../components/Footer/Rose'
 import {ProjectsContainer} from '../components/ProjectItem/styles'
 import {DesignsContainer} from '../components/DesignItem/styles'
 
@@ -59,7 +59,6 @@ const IndexPage = () => {
       <DesignsContainer id="designs">
       {DESIGNS.map((design, i) => (<DesignItem {...design} image={data[design.image].childImageSharp.fluid} key={design.name} left={1 & i}/>))}
       </DesignsContainer>
-      <Rose />
       <SectionHeadline contacts>&lt;CONTACTS/&gt;</SectionHeadline>
     </Layout>
   </>

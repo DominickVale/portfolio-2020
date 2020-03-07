@@ -7,8 +7,7 @@ import Layout, {NoiseBG} from "../components/layout"
 import constants from "../constants";
 
 
-
-const isIE = /*@cc_on!@*/false || !!document.documentMode;
+const isIE =  typeof window !== "undefined" && (/*@cc_on!@*/false || !!document.documentMode);
 
 const Wrapper = styled.main`
 height: 100vh;

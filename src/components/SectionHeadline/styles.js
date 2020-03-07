@@ -2,10 +2,10 @@ import styled from 'styled-components'
 import constants from '../../constants'
 import { MobileBorder } from '../shared/styles'
 
-const isIE = /*@cc_on!@*/false || !!document.documentMode;
+const isIE =  typeof window !== "undefined" && (/*@cc_on!@*/false || !!document.documentMode);
 
 
-export const StyledSectionHeadline = styled.h2`
+export const StyledSectionHeadline = styled.span`
 border: none !important;
 position: relative;
 user-select: none;

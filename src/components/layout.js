@@ -13,7 +13,7 @@ import {noiseAnimation} from '../components/shared/animations'
 
 
 
-const isIE = /*@cc_on!@*/false || !!document.documentMode;
+const isIE =  typeof window !== "undefined" && (/*@cc_on!@*/false || !!document.documentMode);
 
 const GlobalStyle = createGlobalStyle`
 html{

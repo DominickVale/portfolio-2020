@@ -19,7 +19,7 @@ const About = () => {
   const arrowRef = useRef(null)
 
   const isDesktop = useMediaQuery({query: '(min-width: 800px)'})
-  const isIE = /*@cc_on!@*/false || !!document.documentMode;
+  const isIE =  typeof window !== "undefined" && (/*@cc_on!@*/false || !!document.documentMode);
 
   const readMoreHandler = () => {
     setDescriptionExp(state => !state)

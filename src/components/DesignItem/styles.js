@@ -2,7 +2,7 @@ import styled, {css} from 'styled-components'
 import constants from '../../constants'
 import Img from 'gatsby-image'
 
-const isIE = /*@cc_on!@*/false || !!document.documentMode;
+const isIE =  typeof window !== "undefined" && (/*@cc_on!@*/false || !!document.documentMode);
 
 export const DesignTitle = styled.article`
 display: none;

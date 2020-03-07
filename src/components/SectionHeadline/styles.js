@@ -9,10 +9,10 @@ export const StyledSectionHeadline = styled.span`
 border: none !important;
 position: relative;
 user-select: none;
-margin-top: 25vh;
 margin-bottom: ${props => props.contacts ? '24vh' : '10vh'};
 h1{
   margin: 0;
+  margin-top: 25vh !important;
   font-family: "HK Grotesk Bold";
   font-size: 12vw;
   color: ${isIE ? constants.headingColor : 'transparent'};

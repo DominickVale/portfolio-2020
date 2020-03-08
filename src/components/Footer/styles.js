@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled,{css} from 'styled-components'
 import constants from '../../constants'
 
 import {MobileBorder} from '../shared/styles'
@@ -142,4 +142,18 @@ transform: rotateX(180deg);
 }
 @media only screen and (min-width: 1750px){
 }
+`
+
+export const StyledRose = styled.img`
+position: fixed;
+bottom: 7vh;
+left: ${props => props.isDesktop ? -20 : -33}%;
+height: ${props => props.isDesktop ? 100 : 70}vh;
+width: auto;
+mix-blend-mode: ${props => props.isDesktop ? 'color-dodge' : 'lighten'};
+user-select: none;
+pointer-events: none;
+${props => !props.isDesktop && css`
+opacity: 0.7;
+`};
 `

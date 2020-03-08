@@ -55,7 +55,7 @@ const IndexPage = () => {
       {PROJECTS.map((project, i) => (<ProjectItem {...project} index={i} image={data[project.image].childImageSharp.fluid} key={project.name} left={1 & i}/>))}
       </ProjectsContainer>
 
-      <SectionHeadline right>&lt;DESIGNS/&gt;</SectionHeadline>
+      <SectionHeadline toLeft>&lt;DESIGNS/&gt;</SectionHeadline>
       <DesignsContainer id="designs">
       {DESIGNS.map((design, i) => (<DesignItem {...design} image={data[design.image].childImageSharp.fluid} key={design.name} left={1 & i}/>))}
       </DesignsContainer>

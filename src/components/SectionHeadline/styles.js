@@ -13,10 +13,10 @@ margin-bottom: ${props => props.contacts ? '24vh' : '10vh'};
 transform: translateX(0);
 h1{
   margin: 0;
-  margin-top: 25vh !important;
+  margin-top: 35vh !important;
   font-family: "HK Grotesk Bold";
   font-size: 12vw;
-  margin-left: ${props => props.toLeft ? '0' : '36vw'};
+  margin-left: ${props => props.isDesktop ? props.toLeft ? '0' : '36vw' : 0};
   color: ${isIE ? constants.headingColor : 'transparent'};
   -webkit-text-stroke: 1px ${constants.sectionHeadlineColor};
 }

@@ -35,7 +35,7 @@ const ParallaxAnimation = ({element, animation, startOffset, endOffset, smooth, 
     if(typeof window !== "undefined"){
       if(smooth) element.current.style.transition = 'all 1s ease'
       docSize.current = document.body.clientHeight
-      window.addEventListener("scroll", () => {
+      window.addEventListener("resize scroll", () => {
         if(!animationIdRef.current)
           animationIdRef.current = requestAnimationFrame(animate)
       })

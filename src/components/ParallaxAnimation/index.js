@@ -1,7 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react'
-import ReactDOM from 'react-dom';
-import gsap, {Linear} from 'gsap'
-
+import React, {useEffect, useRef} from 'react'
 
 
 const ParallaxAnimation = ({element, animation, startOffset, endOffset, smooth, children}) => {
@@ -35,7 +32,11 @@ const ParallaxAnimation = ({element, animation, startOffset, endOffset, smooth, 
     if(typeof window !== "undefined"){
       if(smooth) element.current.style.transition = 'all 1s ease'
       docSize.current = document.body.clientHeight
-      window.addEventListener("resize scroll", () => {
+      window.addEventListener("scroll", () => {
+        if(!animationIdRef.current)
+          animationIdRef.current = requestAnimationFrame(animate)
+      })
+      window.addEventListener("resize", () => {
         if(!animationIdRef.current)
           animationIdRef.current = requestAnimationFrame(animate)
       })

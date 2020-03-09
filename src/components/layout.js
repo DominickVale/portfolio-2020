@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react"
-import gsap from 'gsap'
+import React, {useEffect, useState, useRef} from "react"
+import gsap, {Expo} from 'gsap'
 
 import Header from "./Header"
 import Footer from "./Footer"
@@ -72,13 +72,13 @@ const Container = styled.div`
 `
 
 const LoadingScreen = styled.div`
-opacity: 0;
+opacity: 1;
 position: fixed;
 height: 100vh;
 width: 100vw;
 z-index: 100000;
 background-color: ${constants.backgroundColor};
-animation: ${loadingScreenAnim} 3s ease-out;
+animation: ${loadingScreenAnim} 2s ease-out 30s;
 top: 0;
 left: 0;
 `
@@ -101,7 +101,7 @@ left: 0;
   background-image: url(${noise});
   background-repeat: repeat;
   background-position: 0;
-  animation: ${noiseAnimation} 1s steps(5) alternate infinite 30s;
+  animation: ${noiseAnimation} 1s steps(5) alternate infinite;
   transform: translate(0,0);
   position: absolute;
   width: 200%;
@@ -111,20 +111,25 @@ left: 0;
 }
 `
 
-
 const Layout = ({ children }) => {
 
   const [loading, setLoading] = useState(true);
+  const loadingScreenRef = useRef(null)
+
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false)
-    }, 3000);
+    gsap.to(loadingScreenRef.current, {
+      opacity: 0,
+      zIndex: -100,
+      duration: 2,
+      ease: Expo.easeIn,
+      onComplete: () => console.log('completed')})
   }, [])
 
   return (
     <Container>
       {!isIE && (<NoiseBG/>)}
-      {loading && (<LoadingScreen>
+      {loading && (
+      <LoadingScreen ref={loadingScreenRef}>
         <NoiseBG zIndex={100000}/>
       </LoadingScreen>)}
       <GlobalStyle />

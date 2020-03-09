@@ -47,6 +47,27 @@ a{
   }
 }
 
+a, button{
+  &:focus{
+    position: relative;
+    outline-style:none;
+    box-shadow:none;
+    border-color:transparent;
+    outline: 1px dotted ${constants.headingColor} !important;
+    outline-offset: 0.2rem;
+    &::before{
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+  }
+}
+
 ::selection{
   background-color: ${constants.selectionBG};
   color: ${constants.highlightColor};

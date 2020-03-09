@@ -7,10 +7,12 @@ import { Highlight } from '../shared/styles'
 import TypedEffect from './TypedEffect'
 import Read from './Read'
 import { blinkIn, fadeInT } from '../shared/animations';
-import {isDesktop} from '../shared/utils'
+import {useIsDesktop} from '../shared/utils'
 
 const About = () => {
 
+  const isDesktop = useIsDesktop()
+  
   const [descriptionExpanded, setDescriptionExp] = useState(false)
   const introCaptionRef = useRef(null)
   const subCaptionRef = useRef(null)

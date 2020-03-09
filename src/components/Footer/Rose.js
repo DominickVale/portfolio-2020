@@ -2,10 +2,12 @@ import React from 'react'
 
 import {StyledRose} from './styles'
 import rose from '../../../public/images/rose.png'
-import {isDesktop} from '../shared/utils'
+import {useIsDesktop} from '../shared/utils'
 
 const Rose = React.forwardRef((props, ref) => {
 
+  const isDesktop = useIsDesktop()
+  
   return (
     <>
       <StyledRose src={rose} ref={ref} isDesktop={isDesktop}/>

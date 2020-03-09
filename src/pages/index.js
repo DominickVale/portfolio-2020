@@ -12,7 +12,7 @@ import Rose from '../components/Footer/Rose'
 import ParallaxAnimation from '../components/ParallaxAnimation'
 import {ProjectsContainer} from '../components/ProjectItem/styles'
 import {DesignsContainer} from '../components/DesignItem/styles'
-import {isDesktop} from '../components/shared/utils'
+import {useIsDesktop} from '../components/shared/utils'
 
 import {PROJECTS, DESIGNS} from '../data'
 import favicon from '../../public/images/favicon.ico'
@@ -20,6 +20,7 @@ import favicon from '../../public/images/favicon.ico'
 
 const IndexPage = () => {
 
+  const isDesktop = useIsDesktop()
   const data = useStaticQuery(graphql`
   fragment fluidBG on File {
     childImageSharp {

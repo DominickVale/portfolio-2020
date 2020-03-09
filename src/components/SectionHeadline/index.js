@@ -1,12 +1,15 @@
 import React, {useEffect, useRef} from 'react'
 import gsap, {TimelineMax, Expo, Sine} from 'gsap'
-import {isDesktop} from '../shared/utils'
+import {useIsDesktop} from '../shared/utils'
 
 import ParallaxAnimation from '../ParallaxAnimation'
 import {StyledSectionHeadline} from './styles'
 
 
 const SectionHeadline = React.forwardRef((props, ref) => {
+  
+  const isDesktop = useIsDesktop()
+
   const elementRef = useRef(null)
   const sectionRef = useRef(null)
   const animationRef = useRef(null)

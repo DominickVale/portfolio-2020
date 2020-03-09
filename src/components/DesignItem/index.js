@@ -2,10 +2,12 @@ import React, {useRef, useState} from 'react'
 import { DesignTitle, DesignWrapper, DesignImage, DesignCaption, BackgroundHoverImage } from './styles'
 import Img from 'gatsby-image'
 import { blinkIn } from '../shared/animations';
+import {useIsDesktop} from '../shared/utils'
 
 const DesignItem = (props) => {
   
-  const isDesktop = typeof window !== "undefined" && window.innerWidth >= 720;
+  const isDesktop = useIsDesktop(720)
+  
   const [canHover, setCanHover] = useState(true)
   const hoverImageRef = useRef(null);
   const designTitleRef = useRef(null)

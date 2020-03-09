@@ -78,7 +78,7 @@ height: 100vh;
 width: 100vw;
 z-index: 100000;
 background-color: ${constants.backgroundColor};
-animation: ${loadingScreenAnim} 2s ease-out 30s;
+animation: ${loadingScreenAnim} 2s ease-out 15s;
 top: 0;
 left: 0;
 `
@@ -120,9 +120,9 @@ const Layout = ({ children }) => {
     gsap.to(loadingScreenRef.current, {
       opacity: 0,
       zIndex: -100,
-      duration: 2,
-      ease: Expo.easeIn,
-      onComplete: () => console.log('completed')})
+      duration: 3,
+      ease: Expo.easeOut,
+      onComplete: () => setLoading(false)})
   }, [])
 
   return (

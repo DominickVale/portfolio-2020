@@ -1,8 +1,9 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
+import gsap from 'gsap'
 
 import Header from "./Header"
 import Footer from "./Footer"
-import styled,{createGlobalStyle, css} from 'styled-components'
+import styled,{createGlobalStyle, css, keyframes} from 'styled-components'
 import constants from "../constants"
 import 'normalize.css';
 import './styles.css';
@@ -14,6 +15,10 @@ import {noiseAnimation} from '../components/shared/animations'
 
 
 const isIE =  typeof window !== "undefined" && (/*@cc_on!@*/false || !!document.documentMode);
+
+const loadingScreenAnim = keyframes`
+0%{opacity: 1;}
+100%{opacity: 0;}`
 
 const GlobalStyle = createGlobalStyle`
 html{
@@ -66,8 +71,20 @@ const Container = styled.div`
   }
 `
 
+const LoadingScreen = styled.div`
+opacity: 0;
+position: fixed;
+height: 100vh;
+width: 100vw;
+z-index: 100000;
+background-color: ${constants.backgroundColor};
+animation: ${loadingScreenAnim} 3s ease-out;
+top: 0;
+left: 0;
+`
+
 export const NoiseBG = styled.div`
-z-index: 1;
+z-index: ${props => props.zIndex || 1};
 opacity: 0.5;
 position: fixed;
 pointer-events: none;
@@ -84,7 +101,7 @@ left: 0;
   background-image: url(${noise});
   background-repeat: repeat;
   background-position: 0;
-  animation: ${noiseAnimation} 1s steps(5) alternate infinite;
+  animation: ${noiseAnimation} 1s steps(5) alternate infinite 30s;
   transform: translate(0,0);
   position: absolute;
   width: 200%;
@@ -97,10 +114,19 @@ left: 0;
 
 const Layout = ({ children }) => {
 
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 3000);
+  }, [])
 
   return (
     <Container>
       {!isIE && (<NoiseBG/>)}
+      {loading && (<LoadingScreen>
+        <NoiseBG zIndex={100000}/>
+      </LoadingScreen>)}
       <GlobalStyle />
       <Header/>
       {children}

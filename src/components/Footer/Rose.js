@@ -1,14 +1,10 @@
-import React, {useEffect, useRef} from 'react'
-import styled from 'styled-components'
-import gsap from 'gsap'
+import React from 'react'
 
-import {useMediaQuery} from 'react-responsive'
 import {StyledRose} from './styles'
 import rose from '../../../public/images/rose.png'
+import {isDesktop} from '../shared/utils'
 
 const Rose = React.forwardRef((props, ref) => {
-
-  const isDesktop = useMediaQuery({query: '(min-width: 800px)'})
 
   return (
     <>

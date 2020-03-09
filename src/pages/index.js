@@ -1,8 +1,7 @@
 import React, {useEffect, useRef} from "react"
 import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
-import gsap, {TimelineMax, Power1} from 'gsap'
-import {useMediaQuery} from 'react-responsive'
+import gsap, {TimelineMax, Linear} from 'gsap'
 
 import Layout from "../components/layout"
 import About from "../components/About"
@@ -13,6 +12,7 @@ import Rose from '../components/Footer/Rose'
 import ParallaxAnimation from '../components/ParallaxAnimation'
 import {ProjectsContainer} from '../components/ProjectItem/styles'
 import {DesignsContainer} from '../components/DesignItem/styles'
+import {isDesktop} from '../components/shared/utils'
 
 import {PROJECTS, DESIGNS} from '../data'
 
@@ -20,7 +20,6 @@ import {PROJECTS, DESIGNS} from '../data'
 
 const IndexPage = () => {
 
-  const isDesktop = useMediaQuery({query: '(min-width: 800px)'})
   const data = useStaticQuery(graphql`
   fragment fluidBG on File {
     childImageSharp {
@@ -53,8 +52,8 @@ const IndexPage = () => {
       scale: 0.8,
       duration: 1,
       left: '-40%',
-      bottom: '-80%',
-      ease: Power1.easeOut
+      bottom: '-40%',
+      ease: Linear.easeNone
     })
   }, [])
 
@@ -82,7 +81,7 @@ const IndexPage = () => {
         animation={roseAnimRef}
         element={triggerRef}
         startOffset={isDesktop ? -200 : -400}
-        endOffset={isDesktop ? 100 : 250}>
+        endOffset={isDesktop ? 100 : 50}>
           <Rose ref={roseRef} />
         <SectionHeadline contacts ref={triggerRef}>&lt;CONTACTS/&gt;</SectionHeadline>
       </ParallaxAnimation>

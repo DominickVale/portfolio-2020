@@ -1,9 +1,9 @@
 import React from 'react'
-import {useMediaQuery} from 'react-responsive'
+
 import { Highlight } from '../shared/styles'
+import {isDesktop} from '../shared/utils'
 
 const Read = React.forwardRef((props, ref)=>{
-  const isDesktop = useMediaQuery({query: '(min-width: 800px)'})
 
   if(!isDesktop){
     return(<Highlight secondary onClick={props.handler} ref={ref}>

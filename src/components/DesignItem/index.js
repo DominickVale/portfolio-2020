@@ -1,13 +1,11 @@
 import React, {useRef, useState} from 'react'
-import gsap from 'gsap'
 import { DesignTitle, DesignWrapper, DesignImage, DesignCaption, BackgroundHoverImage } from './styles'
-import {useMediaQuery} from 'react-responsive';
 import Img from 'gatsby-image'
 import { blinkIn } from '../shared/animations';
 
 const DesignItem = (props) => {
   
-  const isDesktop = useMediaQuery({query: '(min-width: 720px)'})
+  const isDesktop = typeof window !== "undefined" && window.innerWidth >= 720;
   const [canHover, setCanHover] = useState(true)
   const hoverImageRef = useRef(null);
   const designTitleRef = useRef(null)

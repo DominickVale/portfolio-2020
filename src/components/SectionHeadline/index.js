@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react'
 import gsap, {TimelineMax, Expo, Sine} from 'gsap'
-import {useMediaQuery} from 'react-responsive'
+import {isDesktop} from '../shared/utils'
 
 import ParallaxAnimation from '../ParallaxAnimation'
 import {StyledSectionHeadline} from './styles'
@@ -10,8 +10,6 @@ const SectionHeadline = React.forwardRef((props, ref) => {
   const elementRef = useRef(null)
   const sectionRef = useRef(null)
   const animationRef = useRef(null)
-
-  const isDesktop = useMediaQuery({query: '(min-width: 800px)'})
 
   useEffect(() => {
     animationRef.current = new TimelineMax({paused: true}).from(elementRef.current, { marginLeft: props.toLeft ? '55vw' : '-55vw', ease: Sine.easeOut})

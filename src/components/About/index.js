@@ -1,12 +1,13 @@
 import React, {useState, useEffect, useRef} from 'react'
-import {useMediaQuery} from 'react-responsive'
 import {TimelineMax} from 'gsap'
+import Typist from 'react-typist';
+
 import { Container, BackgroundH1, Intro, IntroCaption, IntroSubCaption,  Description, StyledArrow} from './styles'
 import { Highlight } from '../shared/styles'
-import Typist from 'react-typist';
 import TypedEffect from './TypedEffect'
 import Read from './Read'
 import { blinkIn, fadeInT } from '../shared/animations';
+import {isDesktop} from '../shared/utils'
 
 const About = () => {
 
@@ -18,7 +19,6 @@ const About = () => {
   const readMoreRef = useRef(null)
   const arrowRef = useRef(null)
 
-  const isDesktop = useMediaQuery({query: '(min-width: 800px)'})
   const isIE =  typeof window !== "undefined" && (/*@cc_on!@*/false || !!document.documentMode);
 
   const readMoreHandler = () => {

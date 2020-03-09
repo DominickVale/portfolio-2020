@@ -1,14 +1,11 @@
 import React, {useEffect, useRef} from 'react'
 import gsap, {TimelineMax, Expo, Sine} from 'gsap'
-import {useIsDesktop} from '../shared/utils'
 
 import ParallaxAnimation from '../ParallaxAnimation'
 import {StyledSectionHeadline} from './styles'
 
 
 const SectionHeadline = React.forwardRef((props, ref) => {
-  
-  const isDesktop = useIsDesktop()
 
   const elementRef = useRef(null)
   const sectionRef = useRef(null)
@@ -26,8 +23,8 @@ const SectionHeadline = React.forwardRef((props, ref) => {
         animation={animationRef}
         element={sectionRef}
         startOffset={-400}
-        endOffset={props.contacts ? 0 : isDesktop ? 400 : 0}>
-        <StyledSectionHeadline ref={sectionRef} toLeft={props.toLeft} isDesktop={isDesktop}>
+        endOffset={200}>
+        <StyledSectionHeadline ref={sectionRef} toLeft={props.toLeft}>
           <h1 ref={elementRef}>
             {props.children}
           </h1>

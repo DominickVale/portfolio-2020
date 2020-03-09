@@ -82,8 +82,8 @@ const IndexPage = () => {
       <ParallaxAnimation
         animation={roseAnimRef}
         element={triggerRef}
-        startOffset={isDesktop ? -200 : -400}
-        endOffset={isDesktop ? 100 : 50}>
+        startOffset={-400}
+        endOffset={50}>
           <Rose ref={roseRef} />
         <SectionHeadline contacts ref={triggerRef}>&lt;CONTACTS/&gt;</SectionHeadline>
       </ParallaxAnimation>

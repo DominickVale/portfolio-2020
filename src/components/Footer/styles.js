@@ -145,15 +145,19 @@ transform: rotateX(180deg);
 `
 
 export const StyledRose = styled.img`
+opacity: 0.6;
 position: fixed;
 bottom: 7vh;
-left: ${props => props.isDesktop ? -20 : -33}%;
-height: ${props => props.isDesktop ? 100 : 70}vh;
+left: -33vw;
+height: 100vw;
 width: auto;
-mix-blend-mode: ${props => props.isDesktop ? 'color-dodge' : 'lighten'};
+mix-blend-mode: lighten;
 user-select: none;
 pointer-events: none;
-${props => !props.isDesktop && css`
-opacity: 0.7;
-`};
+@media only screen and (min-width: 800px){
+  height: 56vw;
+  opacity: 1;
+  bottom: 0;
+  mix-blend-mode: color-dodge;
+}
 `

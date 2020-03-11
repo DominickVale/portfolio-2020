@@ -1,43 +1,36 @@
 import React, {useEffect, useRef} from 'react'
 import Img from 'gatsby-image'
-import { ProjectContainer, ProjectHeading, ProjectTitle, ProjectImage, ProjectInformation, ProjectDetail, ProjectDetailCaption, ProjectDetailContent, ProjectDescription } from './styles'
+import gsap, {Expo} from 'gsap'
+
+import { ProjectContainer, ProjectTitle, ProjectImage, ProjectInformation, ProjectDetail, ProjectDetailCaption, ProjectDetailContent, ProjectDescription } from './styles'
 import ActionButton from '../shared/ActionButton'
+import {useObserver} from '../shared/utils'
 
 const ProjectItem = (props) => {
 
-  const titleRef = useRef(null)
-  const titleRectRef = useRef(null)
-
-/* 
-  const animate = () => {
-    const tHeight = titleRef.current.clientHeight
-    const tWidth = titleRef.current.clientWidth
-    const offsetLeft = 100
-
-    titleRef.current.style.right = (- (tWidth + offsetLeft)) + 'px'
-    titleRef.current.style.top = -tHeight + 'px'
-  }
-
-
-
-  useEffect(() => {
-    titleRectRef.current = titleRef.current.getBoundingClientRect()
-    animate();
-    if(typeof window !== "undefined"){
-      window.addEventListener('resize', () => {
-        requestAnimationFrame(() => {
-          animate();
-        })
+  const target = useRef(null)
+  const onIntersect = (entry) => {
+    if(entry.isIntersecting){
+      gsap.to(target.current, {
+        opacity: 1,
+        duration: 1,
+        ease: Expo.easeInOut
       })
     }
-  }, []) */
+  }
+
+  const [hasIntersected] = useObserver({target, onIntersect, triggerOnce: false, threshold: 0.3, triggerOnce: true})
+
+  useEffect(() => {
+    console.log('Has intersected: ', hasIntersected)
+  }, [hasIntersected])
 
   return (
-    <ProjectContainer left={props.left}>
+    <ProjectContainer ref={target} left={props.left}>
+      <ProjectTitle left={props.left}><h1>{props.name}</h1></ProjectTitle>
       <ProjectImage>
         <Img fluid={props.image}/>
       </ProjectImage>
-      <ProjectTitle ref={titleRef} left={props.left}><h1>{props.name}</h1></ProjectTitle>
       <ProjectInformation left={props.left}>
         <ProjectDetail>
           <ProjectDetailCaption>date:</ProjectDetailCaption>

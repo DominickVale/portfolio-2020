@@ -15,6 +15,7 @@ export const ProjectsContainer = styled.section`
 `
 
 export const ProjectContainer = styled.article`
+opacity: 0;
 display: flex;
 flex-direction: column;
 margin-bottom: 20vh;
@@ -69,7 +70,6 @@ img{
   object-fit: contain !important;
   z-index: 10 !important;
 }
-${MobileBorder}
 border-image-width: 0px 20px 20px 20px;
 @media only screen and (min-width: 1440px){
   max-height: 68vh !important;
@@ -81,15 +81,15 @@ export const ProjectTitle = styled.span`
 grid-area: title;
 h1{
   text-transform: uppercase;
+  text-align: center;
   position: relative;
   color: ${constants.headingColor};
   font-size: ${constants.projectTitleSize};
-  text-align: left;
   font-family: "HK Grotesk Bold";
   border: none !important;
+  margin-bottom: 8vh;
   &::before{
     content: "";
-    display: none;
     position: absolute;
     border-top: solid;
     border-image-slice: 16 16 16 16;
@@ -105,6 +105,7 @@ h1{
   &::after{
     content: "";
     grid-area: titleObj;
+    display: none;
     position: absolute;
     background-image: url(${objectHeadline2});
     background-repeat: no-repeat;
@@ -122,9 +123,10 @@ h1{
   @media only screen and (min-width: 840px){
     font-size: ${constants.projectTitleSizeDesktop};
     margin: 0;
+    text-align: left;
     padding: 2rem;
     line-height: 90%;
-    &::before{
+    &::after{
       display: inline-block;
     }
   }
@@ -137,12 +139,13 @@ h1{
 `
 
 export const ProjectInformation = styled.div`
-margin-top: 10vh;
+margin-top: 2vh;
 margin-bottom: 2.5vh;
 grid-area: details;
 max-width: 90%;
 margin-left: 2rem;
 @media only screen and (min-width: 800px){
+  margin-top: 10vh;
 }
 @media only screen and (min-width: 1440px){
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export const useIsDesktop = (minWidth) => {
   const isBrowser = typeof window !== 'undefined'
@@ -18,4 +18,42 @@ export const useIsDesktop = (minWidth) => {
   })
 
   return isDesktop
+}
+
+export const useObserver = ({onIntersect, target, root, rootMargin = '0px', threshold = 0, triggerOnce = false}) => {
+
+  const triggered = useRef(false)
+  const [isIntersecting, setIsIntersecting] = useState(false)
+
+  if(typeof root !== "undefined") root = root.current || root;
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry], observer)=>{
+      setIsIntersecting(false);
+
+      if(entry.isIntersecting) {
+        if(onIntersect) {
+          onIntersect(entry, observer)
+          triggered.current = true;
+          setIsIntersecting(true);
+        }
+        if(triggerOnce && triggered.current) {
+          observer.disconnect()
+        }
+      }},
+      {
+        root,
+        rootMargin,
+        threshold,
+      }
+    );
+
+    observer.observe(target.current)
+
+    return () => {
+      if(observer) observer.disconnect()
+    }
+  }, [target, root, rootMargin, threshold])
+
+  return [isIntersecting]
 }

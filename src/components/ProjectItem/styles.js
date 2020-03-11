@@ -2,7 +2,10 @@ import styled,{css} from 'styled-components';
 import Img from 'gatsby-image'
 
 import constants from '../../constants';
-import objectHeadline1 from '../../../public/images/object_headline_1.svg'
+import objectHeadline from '../../../public/images/object_headline.svg'
+import objectHeadline2 from '../../../public/images/object_headline_02.svg'
+import imageBorder from '../../../public/images/image_border.svg'
+
 import {MobileBorder, Highlight} from '../shared/styles'
 
 const _isChrome = typeof window !== "undefined" && (!!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime));
@@ -17,81 +20,54 @@ flex-direction: column;
 margin-bottom: 20vh;
 @media only screen and (min-width: 840px){
   display: grid;
-  grid-template-columns: 3fr 4fr;
+  grid-template-columns: 1.5fr 100px 1fr;
   grid-template-rows: auto auto 1fr;
-  grid-column-gap: 4%;
+  grid-column-gap: 0px;
   grid-template-areas:
-  "image title"
-  "image details"
-  "image button";
+  ". titleObj title"
+  "image . details"
+  "image . button";
   ${props => props.left && css`
+    grid-template-columns: 1fr 100px 1.5fr;
     grid-template-areas:
-    "title image"
-    "details image"
-    "button image";
-    grid-template-columns: 4fr 3fr;
+    "title titleObj ."
+    "details . image"
+    "button . image";
   `}
 }
 @media only screen and (min-width: 1440px){
 }
 `
 
-export const ProjectTitle = styled.h1`
-text-transform: uppercase;
-position: relative;
-grid-area: title;
-color: ${constants.headingColor};
-font-size: ${constants.projectTitleSize};
-text-align: center;
-font-family: "HK Grotesk Bold";
-border: none !important;
-&::before{
-  overflow-x: hidden;
+
+
+export const ProjectImage = styled.div`
+  grid-area: image !important;
+  position: relative !important;
+  margin-bottom: 4vh;
+.gatsby-image-wrapper{
+  z-index: 2;
+  max-height: 60vh !important;
+  padding: 0.5rem;
+}
+&::after{
   content: "";
-  display: none;
+  display: inline-block;
   position: absolute;
-  border-top: solid;
-  border-image-slice: 16 16 16 16;
-  border-image-width: 12px 12px 12px 12px;
-  border-image-outset: 0px 0px 0px 0px;
-  border-image-repeat: stretch stretch;
-  border-image-source: url(${objectHeadline1});
+  border-style: solid !important;
+  border-image-slice: 10 10 10 10 !important;
+  border-image-width: 6px 6px 6px 6px !important;
+  border-image-outset: 6px 0px 6px 5px !important;
+  border-image-repeat: repeat repeat !important;
+  border-image-source: url(${imageBorder}) !important;
   height: 100%;
-  width: 200%;
+  width: 100%;
   left: 0;
   top: 0;
-  ${props => props.left && css`
-  transform: scaleX(-1);
-  left: auto;
-  right: 0;
-  `}
 }
-@media only screen and (min-width: 840px){
-  font-size: ${constants.projectTitleSizeDesktop};
-  margin: 0;
-  padding: 2rem;
-  text-align: left;
-  line-height: 80%;
-  &::before{
-    display: inline-block;
-  }
-  ${props => props.left && css`text-align: right !important;`}
-}
-${_isChrome && css`
-  padding: 2rem 2rem 1.3rem 2rem !important;
-`//had to select only chrome to fix vertical alignment because ... chrome. 
-}
-${MobileBorder}
-`
-
-export const ProjectImage = styled(Img)`
-grid-area: image;
-z-index: 2;
-max-height: 60vh !important;
-margin-bottom: 4vh;
-border: none !important;
 img{
   object-fit: contain !important;
+  z-index: 10 !important;
 }
 ${MobileBorder}
 border-image-width: 0px 20px 20px 20px;
@@ -100,16 +76,75 @@ border-image-width: 0px 20px 20px 20px;
 }
 `
 
+
+export const ProjectTitle = styled.span`
+grid-area: title;
+h1{
+  text-transform: uppercase;
+  position: relative;
+  color: ${constants.headingColor};
+  font-size: ${constants.projectTitleSize};
+  text-align: left;
+  font-family: "HK Grotesk Bold";
+  border: none !important;
+  &::before{
+    content: "";
+    display: none;
+    position: absolute;
+    border-top: solid;
+    border-image-slice: 16 16 16 16;
+    border-image-width: 12px 12px 12px 12px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: stretch stretch;
+    border-image-source: url(${objectHeadline});
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+  &::after{
+    content: "";
+    grid-area: titleObj;
+    position: absolute;
+    background-image: url(${objectHeadline2});
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: -100px;
+    bottom: 0;
+    height: 50px;
+    width: 100px;
+    ${props => props.left && css`
+      transform: scaleX(-1);
+      left: unset;
+      right: -100px;
+    `}
+  }
+  @media only screen and (min-width: 840px){
+    font-size: ${constants.projectTitleSizeDesktop};
+    margin: 0;
+    padding: 2rem;
+    line-height: 90%;
+    &::before{
+      display: inline-block;
+    }
+  }
+  ${_isChrome && css`
+    padding: 2rem 2rem 1.3rem 2rem !important;
+  `//had to select only chrome to fix vertical alignment because ... chrome. 
+  }
+  ${MobileBorder}
+}
+`
+
 export const ProjectInformation = styled.div`
-margin-top: 8vh;
+margin-top: 10vh;
+margin-bottom: 2.5vh;
 grid-area: details;
 max-width: 90%;
-margin-left: 1rem;
+margin-left: 2rem;
 @media only screen and (min-width: 800px){
-margin-left: 10vw;
 }
 @media only screen and (min-width: 1440px){
-margin-left: 20vw;
 }
 `
 export const ProjectDetail = styled.span`

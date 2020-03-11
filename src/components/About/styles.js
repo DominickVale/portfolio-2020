@@ -12,7 +12,6 @@ display: flex;
 flex-direction: column;
 font-family: "HK Grotesk Bold";
 margin-top: 10vh;
-min-height: 100vh;
 @media only screen and (min-width: 800px){
   margin-top: 14vh;
 }

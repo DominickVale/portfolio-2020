@@ -9,6 +9,7 @@ import 'normalize.css';
 import './styles.css';
 
 import noise from '../../public/images/noise.png'
+import grid from '../../public/images/grid.svg'
 import {noiseAnimation} from '../components/shared/animations'
 
 
@@ -27,7 +28,9 @@ html{
 }
 
 body{
+  background-image: url(${grid});
   background-color: ${constants.backgroundColor};
+  background-repeat: repeat;
   overflow-x: hidden;
   padding: 0 33px;
   color: beige;

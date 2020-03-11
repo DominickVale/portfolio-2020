@@ -49,9 +49,9 @@ export const ActionButtonContainer = styled.a`
 grid-area: button;
 cursor: pointer;
 align-self: flex-start;
-justify-self: ${props => props.left ? 'flex-start' : 'flex-end'};
+justify-self: flex-start;
 position: relative;
-right: 4%;
+left: 0;
 background-color: ${constants.backgroundObjectsColor};
 padding: 1rem 2rem;
 font-family: "HK Grotesk Bold";
@@ -93,7 +93,7 @@ transition: all 0.5s ease;
 }
 @media only screen and (min-width: 800px){
   margin: 5% 0;
-  right: 10%;
+  left: 100px;
   ${props => props.left && css`
   right: -41.5%;
   `}

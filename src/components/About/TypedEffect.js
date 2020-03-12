@@ -4,7 +4,7 @@ import Typist from 'react-typist';
 const TypedEffect = (props) => {
   return (
     <Typist avgTypingDelay={props.intro ? 30 : 0}
-      stdTypingDelay={10}
+      stdTypingDelay={0}
       startDelay={props.intro ? 3000 : props.startDelay}
       cursor={{element: props.intro ? '|' : '', hideWhenDone: true, hideWhenDoneDelay: 300}}
       {...props}

@@ -33,9 +33,8 @@ const About = () => {
     if(!isIE) tl.add(blinkIn(bgH1Ref.current), 2.4)
                 .add(blinkIn(introCaptionRef.current), '-=1')
                 .add(fadeInT(subCaptionRef.current), '+=3')
-                .add(blinkIn(descriptionRef.current))
-                .add(fadeInT(readMoreRef.current), '+=1.2')
-                .add(blinkIn(arrowRef.current), '+=1.8')
+                .add(fadeInT(readMoreRef.current), '+=3')
+                .add(blinkIn(arrowRef.current), '+=2.2')
   }, [])
 
   /** Fix for typewriter effect completely hiding text on IE */
@@ -89,8 +88,8 @@ const About = () => {
           <IntroSubCaption ref={subCaptionRef}>Let's go. In and out. Two&nbsp;minutes&nbsp;adventure.</IntroSubCaption>
         </Intro>
       <Description ref={descriptionRef}>
-        <TypedEffect startDelay={7500}>
-          <Highlight>Who am i?</Highlight><Typist.Delay ms={1000} /><br/><br/>
+        <TypedEffect startDelay={8000}>
+          <Highlight>Who am i?</Highlight><Typist.Delay ms={1500} /><br/><br/>
           I’m a 21 years old guy from Italy whose interests range from web development/design to reverse engineering, nature&nbsp;&&nbsp;sportbikes.&nbsp;</TypedEffect>
           <Read more
             ref={readMoreRef}
@@ -99,7 +98,7 @@ const About = () => {
 
           {(descriptionExpanded || isDesktop) && (
             <>
-            <TypedEffect stdTypingDelay={1} startDelay={isDesktop ? 10000 : 0}>
+            <TypedEffect startDelay={isDesktop ? 11000 : 0}>
               I see life as a progressive and competitive MMoRPG Game, in which you are supposed to improve on your skills and become the best possible version of yourself
               before&nbsp;the&nbsp;end&nbsp;game.&nbsp;
             </TypedEffect>
@@ -108,7 +107,7 @@ const About = () => {
               handler={readMoreHandler}/><br/>{!isDesktop && (<br/>)}
           </>)}
           
-        <TypedEffect startDelay={isDesktop ? 11500 : 11000}>
+        <TypedEffect startDelay={isDesktop ? 13000 : 11500}>
           I’m currently looking for a job as JavaScript 
           Front&#8209;end&nbsp;Developer.
         </TypedEffect>

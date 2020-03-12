@@ -15,7 +15,6 @@ export const ProjectsContainer = styled.section`
 `
 
 export const ProjectContainer = styled.article`
-opacity: 0;
 display: flex;
 flex-direction: column;
 margin-bottom: 20vh;
@@ -43,16 +42,17 @@ margin-bottom: 20vh;
 
 
 export const ProjectImage = styled.div`
-  grid-area: image !important;
-  position: relative !important;
-  margin-bottom: 4vh;
+visibility: hidden;
+grid-area: image !important;
+position: relative !important;
+margin-bottom: 4vh;
 .gatsby-image-wrapper{
   z-index: 2;
   max-height: 60vh !important;
   padding: 0.5rem;
 }
-&::after{
-  content: "";
+.imageBorder{
+  transform-origin: ${props => props.left ? 'top left' : 'top right'};
   display: inline-block;
   position: absolute;
   border-style: solid !important;
@@ -78,64 +78,65 @@ border-image-width: 0px 20px 20px 20px;
 
 
 export const ProjectTitle = styled.span`
+visibility: visible;
+display: border-box;
 grid-area: title;
-h1{
-  text-transform: uppercase;
-  text-align: center;
-  position: relative;
-  color: ${constants.headingColor};
-  font-size: ${constants.projectTitleSize};
-  font-family: "HK Grotesk Bold";
-  border: none !important;
-  margin-bottom: 8vh;
-  &::before{
-    content: "";
-    position: absolute;
-    border-top: solid;
-    border-image-slice: 16 16 16 16;
-    border-image-width: 12px 12px 12px 12px;
-    border-image-outset: 0px 0px 0px 0px;
-    border-image-repeat: stretch stretch;
-    border-image-source: url(${objectHeadline});
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-  }
-  &::after{
-    content: "";
-    grid-area: titleObj;
-    display: none;
-    position: absolute;
-    background-image: url(${objectHeadline2});
-    background-repeat: no-repeat;
-    background-size: cover;
-    left: -100px;
-    bottom: 0;
-    height: 50px;
-    width: 100px;
-    ${props => props.left && css`
-      transform: scaleX(-1);
-      left: unset;
-      right: -100px;
-    `}
-  }
-  @media only screen and (min-width: 840px){
-    font-size: ${constants.projectTitleSizeDesktop};
-    margin: 0;
-    text-align: left;
-    padding: 2rem;
-    line-height: 90%;
-    &::after{
-      display: inline-block;
-    }
-  }
-  ${_isChrome && css`
-    padding: 2rem 2rem 1.3rem 2rem !important;
-  `//had to select only chrome to fix vertical alignment because ... chrome. 
-  }
-  ${MobileBorder}
+text-transform: uppercase;
+text-align: center;
+position: relative;
+color: ${constants.headingColor};
+font-size: ${constants.projectTitleSize};
+font-family: "HK Grotesk Bold";
+border: none !important;
+margin-bottom: 8vh;
+.titleBorder{
+  visibility: hidden;
+  position: absolute;
+  border-top: solid;
+  border-image-slice: 16 16 16 16;
+  border-image-width: 1vw 1vw 1vw 1vw;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: stretch stretch;
+  border-image-source: url(${objectHeadline});
+  transform: scale(1);
+  height: 100%;
+  width: 100%;
+  left: 0%;
+  top: 0%;
 }
+.titleObject{
+  visibility: hidden;
+  grid-area: titleObj;
+  display: none;
+  position: absolute;
+  background-image: url(${objectHeadline2});
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: -100px;
+  bottom: 0;
+  height: 50px;
+  width: 100px;
+  ${props => props.left && css`
+    transform: scaleX(-1);
+    left: unset;
+    right: -100px;
+  `}
+}
+@media only screen and (min-width: 840px){
+  font-size: ${constants.projectTitleSizeDesktop};
+  margin: 0;
+  text-align: left;
+  padding: 2rem;
+  line-height: 90%;
+  .titleObject{
+    display: inline-block;    
+  }
+}
+${_isChrome && css`
+  padding: 2rem 2rem 1.3rem 2rem !important;
+`//had to select only chrome to fix vertical alignment because ... chrome. 
+}
+${MobileBorder}
 `
 
 export const ProjectInformation = styled.div`

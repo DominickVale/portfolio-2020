@@ -22,8 +22,6 @@ const ProjectItem = (props) => {
   const isDesktop = useIsDesktop();
 
   
-  //useObserver({target: title, onIntersect: () => console.log('title intersect'), threshold: 0.5, triggerOnce: true})
-  
   const onIntersect = (entry) => {
     if(entry.isIntersecting){
       const tl = new TimelineMax();
@@ -31,12 +29,16 @@ const ProjectItem = (props) => {
       tl.set(titleObject.current, {visibility: 'visible'});
       tl.set(titleBorder.current, {visibility: 'visible'});
       tl.set(imageContainer.current, {visibility: 'visible'});
+
+      // I don't really like scrolljacking, so, commented out. Might change.
+      //if(isDesktop) information.current.scrollIntoView({behavior: "smooth", block: "center"}) 
+
       
       tl.from(titleBorder.current, {
         transform: 'scaleY(0)',
-        duration: 2.2,
+        duration: 1.4,
           ease: Elastic.easeInOut.config(1, 0.005)
-        }, '-=1')
+        })
         .add(blinkIn(titleBorder.current, 0, 20), '-=1.6')
         .add(blinkIn(titleObject.current, 0, 12), '-=0.7')
         .from(imageBorder.current, {

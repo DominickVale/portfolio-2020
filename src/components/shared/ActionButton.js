@@ -2,12 +2,12 @@ import React from 'react'
 
 import {ActionButtonContainer} from './styles'
 
-const ActionButton = (props) => {
+const ActionButton = React.forwardRef((props, ref) => {
   return (
-    <ActionButtonContainer {...props}>
+    <ActionButtonContainer {...props} ref={ref}>
       {props.children}
     </ActionButtonContainer>
   )
-}
+})
 
 export default ActionButton

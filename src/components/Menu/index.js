@@ -31,10 +31,10 @@ const Menu = (props) => {
             </svg>
           </CloseButton>
         </CloseButtonWrapper>
-        <MenuItem ref={el => {linksRef.current[0] = el}} href="#about">ABOUT</MenuItem>
-        <MenuItem ref={el => {linksRef.current[1] = el}} href="#projects" active>PROJECTS</MenuItem>
-        <MenuItem ref={el => {linksRef.current[2] = el}} href="#designs" >DESIGNS</MenuItem>
-        <MenuItem ref={el => {linksRef.current[3] = el}} href="#contacts" >CONTACTS</MenuItem>
+        <MenuItem ref={el => {linksRef.current[0] = el}} onClick={closeHandler} href="#about">ABOUT</MenuItem>
+        <MenuItem ref={el => {linksRef.current[1] = el}} onClick={closeHandler} href="#projects" active>PROJECTS</MenuItem>
+        <MenuItem ref={el => {linksRef.current[2] = el}} onClick={closeHandler} href="#designs" >DESIGNS</MenuItem>
+        <MenuItem ref={el => {linksRef.current[3] = el}} onClick={closeHandler} href="#contacts" >CONTACTS</MenuItem>
       </MenuContainer>
     </MenuWrapper>
   )

@@ -40,6 +40,9 @@ const IndexPage = () => {
     photographer_e_commerce: file(relativePath: { eq: "photographer_e_commerce.jpg" }){
       ...fluidBG
     }
+    america_sportclub: file(relativePath: { eq: "america_sportclub.jpg" }){
+      ...fluidBG
+    }
   }
   `)
 

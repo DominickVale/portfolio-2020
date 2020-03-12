@@ -94,7 +94,7 @@ const ProjectItem = (props) => {
         </ProjectDetail>
         <ProjectDescription>
           <ProjectDetailCaption float="left">notes:</ProjectDetailCaption>
-          <ProjectDetailContent>{props.description}</ProjectDetailContent>
+          <ProjectDetailContent dangerouslySetInnerHTML={{__html: props.description}}></ProjectDetailContent>
         </ProjectDescription>
       </ProjectInformation>
       <ActionButton ref={button} left={props.left} href={props.link} target="_blank" rel="noreferrer">VISIT WEBSITE</ActionButton>

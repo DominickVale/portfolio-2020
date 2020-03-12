@@ -47,7 +47,12 @@ const DesignItem = (props) => {
   }
 
   if (isDesktop) return (
-    <DesignTitle left={props.left} onMouseMove={hoverHandler} ref={designTitleRef} onMouseEnter={mouseEnterHandler} onMouseLeave={mouseLeaveHandler}>
+    <DesignTitle left={props.left}
+      href={props.link} target="_blank" rel="noreferrer"
+      onMouseMove={hoverHandler}
+      ref={designTitleRef}
+      onMouseEnter={mouseEnterHandler}
+      onMouseLeave={mouseLeaveHandler}>
       <BackgroundHoverImage ref={hoverImageRef}>
         <Img fluid={props.image}/>
       </BackgroundHoverImage>

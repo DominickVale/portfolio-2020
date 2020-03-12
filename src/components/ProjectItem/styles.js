@@ -46,8 +46,10 @@ visibility: hidden;
 grid-area: image !important;
 position: relative !important;
 margin-bottom: 4vh;
+div{
+  z-index: 10 !important;
+}
 .gatsby-image-wrapper{
-  z-index: 2;
   max-height: 60vh !important;
   padding: 0.5rem;
 }
@@ -65,10 +67,10 @@ margin-bottom: 4vh;
   width: 100%;
   left: 0;
   top: 0;
+  z-index: 0 !important;
 }
 img{
   object-fit: contain !important;
-  z-index: 10 !important;
 }
 border-image-width: 0px 20px 20px 20px;
 @media only screen and (min-width: 1440px){
@@ -94,7 +96,7 @@ margin-bottom: 8vh;
   position: absolute;
   border-top: solid;
   border-image-slice: 16 16 16 16;
-  border-image-width: 1vw 1vw 1vw 1vw;
+  border-image-width: 2vw 2vw 2vw 2vw;
   border-image-outset: 0px 0px 0px 0px;
   border-image-repeat: stretch stretch;
   border-image-source: url(${objectHeadline});
@@ -103,6 +105,9 @@ margin-bottom: 8vh;
   width: 100%;
   left: 0%;
   top: 0%;
+  @media only screen and (min-width: 800px){
+    border-image-width: 1vw 1vw 1vw 1vw;
+  }
 }
 .titleObject{
   visibility: hidden;

@@ -4,7 +4,7 @@ import gsap, {TimelineMax, Expo, Elastic} from 'gsap/all'
 
 import { ProjectContainer, ProjectTitle, ProjectImage, ProjectInformation, ProjectDetail, ProjectDetailCaption, ProjectDetailContent, ProjectDescription } from './styles'
 import ActionButton from '../shared/ActionButton'
-import {useObserver} from '../shared/utils'
+import {useObserver, useIsDesktop} from '../shared/utils'
 import { blinkIn } from '../shared/animations'
 
 const ProjectItem = (props) => {
@@ -19,18 +19,22 @@ const ProjectItem = (props) => {
   const image = useRef(null)
   const button = useRef(null)
 
+  const isDesktop = useIsDesktop();
 
+  
+  //useObserver({target: title, onIntersect: () => console.log('title intersect'), threshold: 0.5, triggerOnce: true})
+  
   const onIntersect = (entry) => {
     if(entry.isIntersecting){
       const tl = new TimelineMax();
-
+      
       tl.set(titleObject.current, {visibility: 'visible'});
       tl.set(titleBorder.current, {visibility: 'visible'});
       tl.set(imageContainer.current, {visibility: 'visible'});
-
+      
       tl.from(titleBorder.current, {
-          transform: 'scaleY(0)',
-          duration: 2.2,
+        transform: 'scaleY(0)',
+        duration: 2.2,
           ease: Elastic.easeInOut.config(1, 0.005)
         }, '-=1')
         .add(blinkIn(titleBorder.current, 0, 20), '-=1.6')
@@ -45,14 +49,23 @@ const ProjectItem = (props) => {
           scaleY: 0,
           autoAlpha: 0,
           duration: 1,
+          zIndex: 100,
           ease: Elastic.easeInOut.config(1, 1)
         }, '-=0.8')
+      }
     }
-  }
-
-  const [hasIntersected] = useObserver({target: container, onIntersect, threshold: 0.8, triggerOnce: true})
+    
+    const [hasIntersected] = useObserver({
+      target: isDesktop ? container : imageBorder,
+      onIntersect,
+      threshold: isDesktop ? 0.8 : 0.2,
+      triggerOnce: true
+    })
 
   useEffect(() => {
+    console.log(container.current)
+    console.log(title.current)
+    console.log(titleObject.current)
   }, [hasIntersected])
 
   return (
@@ -63,10 +76,10 @@ const ProjectItem = (props) => {
         <div className="titleObject" ref={titleObject}/>
       </ProjectTitle>
       <ProjectImage left={props.left} ref={imageContainer}>
+        <div className="imageBorder" ref={imageBorder}/>
         <div ref={image}>
           <Img fluid={props.image}/>
         </div>
-        <div className="imageBorder" ref={imageBorder}/>
       </ProjectImage>
       <ProjectInformation left={props.left} ref={information}>
         <ProjectDetail>

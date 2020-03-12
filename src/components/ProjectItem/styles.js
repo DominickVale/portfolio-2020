@@ -46,12 +46,46 @@ visibility: hidden;
 grid-area: image !important;
 position: relative !important;
 margin-bottom: 4vh;
+border-image-width: 0px 20px 20px 20px;
+&::after{
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: ${constants.highlightColor};
+  mix-blend-mode: hue;
+  opacity: 1;
+  z-index: 10;
+  transition: opacity 1s ease-in-out;
+}
+&:hover{
+  &::after{
+    opacity: 0;
+  }
+  .gatsby-image-wrapper{
+    transform: scale(1) !important;
+  }
+}
 div{
+  height: 100%;
+  width: 100%;
   z-index: 10 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .gatsby-image-wrapper{
   max-height: 60vh !important;
+  display: block;
+  height: 90%;
+  width: 90%;
   padding: 0.5rem;
+  transform: scale(0.9);
+  transition: transform 0.5s ease-in-out;
 }
 .imageBorder{
   transform-origin: ${props => props.left ? 'top left' : 'top right'};
@@ -72,7 +106,6 @@ div{
 img{
   object-fit: contain !important;
 }
-border-image-width: 0px 20px 20px 20px;
 @media only screen and (min-width: 1440px){
   max-height: 68vh !important;
 }

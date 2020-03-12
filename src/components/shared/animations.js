@@ -22,10 +22,10 @@ export const fadeInT = (target, duration, delay) =>
   })
 
 
-export const blinkIn = (target, delay) =>
+export const blinkIn = (target, delay, times) =>
   TweenMax.from(target, {
     opacity: 0,
-    repeat: 12,
+    repeat: times || 12,
     duration: .08,
     ease: Linear,
     delay: delay || 0

@@ -60,7 +60,7 @@ const DesignItem = (props) => {
     </DesignTitle>
   );
   else return(
-    <DesignWrapper>
+    <DesignWrapper href={props.link} target="_blank" rel="noreferrer">
       <DesignImage fluid={props.image}/>
       <DesignCaption>
         {props.name}

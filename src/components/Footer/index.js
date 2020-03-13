@@ -26,7 +26,7 @@ const Footer = () => {
           <p>742 Evergreen Terrace, IT</p>
         </Content>
       </ContactInfo>
-      <QuoteSection>The individual has always had to struggle to keep from being overwhelmed by the tribe. To be your own man is a hard business. If you try it, you'll be lonely often, and sometimes frightened. But no price is too high to pay for the privilege of owning yourself. — Rudyard Kipling</QuoteSection>
+      <QuoteSection>The individual has always had to struggle to keep from being overwhelmed by the tribe. To be your own man is a hard business. If you try it, you'll be lonely often, and sometimes frightened. But no price is too high to pay for the privilege of owning yourself. —&nbsp;Rudyard&nbsp;Kipling</QuoteSection>
       <Icons />
       <DevelopedBy><p>developed & designed by <a href="https://www.facebook.com/dominickveil" target="_blank" rel="noopener noreferrer"><Highlight>Yours truly</Highlight></a>.</p></DevelopedBy>
     </FooterContainer>

@@ -70,10 +70,10 @@ const IndexPage = () => {
       <title>Domenico Vale - Web developer & designer</title>
       <meta property="og:title" content="Domenico Vale - Web developer & designer" />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://dominick-portfolio-2020-test.netlify.com/" />
+      <meta property="og:url" content="https://domenicovale.netlify.com/" />
       <meta property="og:image" content={preview} />
       <link rel="icon" href={favicon}/>
-      <link rel="canonical" href="https://dominick-portfolio-2020-test.netlify.com/" />
+      <link rel="canonical" href="https://domenicovale.netlify.com/" />
     </Helmet>
     <Layout id="about">
       <About/>

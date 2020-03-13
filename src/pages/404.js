@@ -37,7 +37,7 @@ const NotFoundPage = () => (
       <meta charSet="utf-8" />
       <meta name="description" content="I’m a 21 years old Front-end Web Developer from Italy. I’m currently looking for a job as JavaScript Front-end Developer." />
       <title>Domenico Vale doesn't know what are you trying to access here</title>
-      <link rel="canonical" href="https://dominick-portfolio-2020-test.netlify.com/" />
+      <link rel="canonical" href="https://domenicovale.netlify.com/404" />
     </Helmet>
   {!isIE && (<NoiseBG />)}
     <FourOFour to="/">404 much?</FourOFour>

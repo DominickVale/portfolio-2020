@@ -10,7 +10,7 @@ export const PROJECTS = [
   {
     name: "Photographer E‑commerce",
     image: "photographer_e_commerce",
-    description: "A very, very simple e-commerce for a John Doe photographer trying to sell some of his shots. Server-side rendered with Next.js, it features contentful as headless-cms. I wanted to try out stripe, so i used express for a simple and quick custom back-end...",
+    description: "A minimalistic e-commerce for a John Doe photographer trying to sell some of his shots. Server-side rendered with Next.js, it features contentful as headless-cms. Context API was used for state management. Also, i wanted to try out stripe, so i used express for a simple and quick custom back-end...",
     tags: "#React #StyledComponents #contentful #node.js #express #next #stripe #framer-motion",
     date: "02/13/2020",
     link: "https://photographer-e-commerce.herokuapp.com"

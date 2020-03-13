@@ -11,7 +11,6 @@ export const useIsDesktop = (minWidth) => {
     const handleResize = () => setIsDesktop(window.innerWidth >= minWidth)
     window.addEventListener('resize', handleResize)
 
-    console.log('isdesktop: ', isDesktop)
     return () => {
       window.removeEventListener('resize', handleResize)
     }

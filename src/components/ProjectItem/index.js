@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react'
+import React, {useRef} from 'react'
 import Img from 'gatsby-image'
 import gsap, {TimelineMax, Expo, Elastic} from 'gsap/all'
 
@@ -63,12 +63,6 @@ const ProjectItem = (props) => {
       threshold: isDesktop ? 0.8 : 0.2,
       triggerOnce: true
     })
-
-  useEffect(() => {
-    console.log(container.current)
-    console.log(title.current)
-    console.log(titleObject.current)
-  }, [hasIntersected])
 
   return (
     <ProjectContainer ref={container} left={props.left}>

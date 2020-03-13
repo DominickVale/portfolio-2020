@@ -16,6 +16,7 @@ import {useIsDesktop} from '../components/shared/utils'
 
 import {PROJECTS, DESIGNS} from '../data'
 import favicon from '../../public/images/favicon.ico'
+import preview from '../../public/images/preview.jpg'
 
 
 const IndexPage = () => {
@@ -67,6 +68,10 @@ const IndexPage = () => {
       <meta charSet="utf-8" />
       <meta name="description" content="I’m a 21 years old Front-end Web Developer from Italy. I’m currently looking for a job as JavaScript Front-end Developer." />
       <title>Domenico Vale - Web developer & designer</title>
+      <meta property="og:title" content="Domenico Vale - Web developer & designer" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://dominick-portfolio-2020-test.netlify.com/" />
+      <meta property="og:image" content={preview} />
       <link rel="icon" href={favicon}/>
       <link rel="canonical" href="https://dominick-portfolio-2020-test.netlify.com/" />
     </Helmet>

@@ -63,7 +63,7 @@ justify-content: space-between;
 `
 
 
-export const DesignWrapper = styled.a`
+export const DesignWrapper = styled.section`
 position: relative;
 width: 10rem;
 height: 10rem;
@@ -78,7 +78,6 @@ font-family: "HK Grotesk Bold";
 font-size: 100%;
 top: 33%;
 left: 0;
-width: 100%;
 text-transform: uppercase;
 z-index: 5;
 text-align: center;

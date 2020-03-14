@@ -21,9 +21,9 @@ const Footer = () => {
           <Highlight>address:</Highlight>
         </Captions>
         <Content>
-          <p>+39 555-555-555</p>
+          <p>+39 3319568093</p>
           <p><a href="mailto: dominickveil@gmail.com">dominickveil@gmail.com</a></p>
-          <p>742 Evergreen Terrace, IT</p>
+          <p>Carinola (CE), Campania, Italy</p>
         </Content>
       </ContactInfo>
       <QuoteSection>The individual has always had to struggle to keep from being overwhelmed by the tribe. To be your own man is a hard business. If you try it, you'll be lonely often, and sometimes frightened. But no price is too high to pay for the privilege of owning yourself. —&nbsp;Rudyard&nbsp;Kipling</QuoteSection>

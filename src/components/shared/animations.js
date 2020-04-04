@@ -152,31 +152,16 @@ export const noiseAnimation = keyframes`
 20% {
   transform: translate(20%, 0%)
 }
-20% {
-  transform: translate(-5%, -10%)
-}
-30% {
-  transform: translate(0%, 20%)
-}
 40% {
   transform: translate(-8%, -2%)
-}
-50% {
-  transform: translate(10%, 5%)
 }
 60% {
   transform: translate(0%, 0%)
 }
-70% {
-  transform: translate(-20%, -20%)
-}
 80% {
-  transform: translate(0%, 20%)
-}
-90% {
-  transform: translate(-5%, 0%)
-}
-200% {
   transform: translate(20%, 10%)
+}
+100% {
+  transform: translate(-20%, -10%)
 }
 `

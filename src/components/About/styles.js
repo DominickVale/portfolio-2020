@@ -126,7 +126,7 @@ display: flex;
 flex-direction: column;
 justify-content: flex-end;
 align-items: center;
-animation: ${slowBlink} 0.09s infinite linear 16s;
+animation: ${slowBlink} 0.2s infinite linear 16s;
 svg{
   transform: scale(0.5);
 }

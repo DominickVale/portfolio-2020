@@ -108,7 +108,7 @@ const About = () => {
           </>)}
           
         <TypedEffect startDelay={isDesktop ? 13000 : 11500}>
-          I’m currently looking for a job as JavaScript 
+          I’m currently working at <a href="https://www.vidra.com" noreferrer noopener>Vidra</a> as a Junior
           Front&#8209;end&nbsp;Developer.
         </TypedEffect>
       </Description>

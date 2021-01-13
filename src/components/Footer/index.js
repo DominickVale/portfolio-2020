@@ -21,7 +21,7 @@ const Footer = () => {
           <Highlight>address:</Highlight>
         </Captions>
         <Content>
-          <p>+39 3319568093</p>
+          <p>please contact me via email first</p>
           <p><a href="mailto: dominickveil@gmail.com">dominickveil@gmail.com</a></p>
           <p>Carinola (CE), Campania, Italy</p>
         </Content>

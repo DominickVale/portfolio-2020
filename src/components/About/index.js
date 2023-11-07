@@ -49,7 +49,7 @@ const About = () => {
       </Intro>
     <Description ref={descriptionRef}>
         <Highlight>Who am i?</Highlight><br/><br/>
-        I’m a 21 years old guy from Italy whose interests range from web development/design to reverse engineering, nature&nbsp;&&nbsp;sportbikes.&nbsp;
+        I’m just a guy from Italy whose interests range from web development/design to reverse engineering, mountain-biking&nbsp;&&nbsp;various&nbsp;arts.&nbsp;
         <Read more
           ref={readMoreRef}
           expanded={descriptionExpanded}
@@ -90,7 +90,7 @@ const About = () => {
       <Description ref={descriptionRef}>
         <TypedEffect startDelay={8000}>
           <Highlight>Who am i?</Highlight><Typist.Delay ms={1500} /><br/><br/>
-          I’m a 21 years old guy from Italy whose interests range from web development/design to reverse engineering, nature&nbsp;&&nbsp;sportbikes.&nbsp;</TypedEffect>
+          I’m just a guy from Italy whose interests range from web development/design to reverse engineering, mountain-biking&nbsp;&&nbsp;various&nbsp;arts.&nbsp;</TypedEffect>
           <Read more
             ref={readMoreRef}
             expanded={descriptionExpanded}
@@ -108,8 +108,7 @@ const About = () => {
           </>)}
           
         <TypedEffect startDelay={isDesktop ? 13000 : 11500}>
-          I’m currently working at <a href="https://www.vidra.com" noreferrer noopener>Vidra</a> as a Junior
-          Front&#8209;end&nbsp;Developer.
+          This portfolio website is being updated and, thus, currently outdated.
         </TypedEffect>
       </Description>
       </>)}

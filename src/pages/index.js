@@ -66,7 +66,7 @@ const IndexPage = () => {
     <>
     <Helmet>
       <meta charSet="utf-8" />
-      <meta name="description" content="I’m a 21 years old Front-end Web Developer from Italy. I’m currently looking for a job as JavaScript Front-end Developer." />
+      <meta name="description" content="I’m a Front-end Web Developer from Italy. Hit me up and let's concretize your vision." />
       <title>Domenico Vale - Web developer & designer</title>
       <meta property="og:title" content="Domenico Vale - Web developer & designer" />
       <meta property="og:type" content="website" />
